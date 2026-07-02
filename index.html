@@ -45,9 +45,11 @@
   .hero-content .eyebrow {
     text-transform: uppercase;
     letter-spacing: 3px;
-    font-size: 0.85rem;
-    color: var(--gold);
-    margin-bottom: 12px;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #f4cd7a;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+    margin-bottom: 14px;
   }
   .hero-content h1 {
     font-size: clamp(2.8rem, 9vw, 5.2rem);
@@ -208,9 +210,9 @@
   .people-grid span {
     background: rgba(255,255,255,0.1);
     border: 1px solid rgba(255,255,255,0.3);
-    padding: 10px 22px;
+    padding: 8px 16px;
     border-radius: 999px;
-    font-size: 1rem;
+    font-size: 0.9rem;
   }
 
   footer {
@@ -222,6 +224,8 @@
 
   @media (max-width: 700px) {
     .stay { grid-template-columns: 1fr; }
+    .people-grid { gap: 8px; }
+    .people-grid span { padding: 6px 12px; font-size: 0.78rem; }
   }
 </style>
 </head>
@@ -249,8 +253,7 @@
   <div class="stay">
     <img src="assets/img/foto2.png" alt="Casa em Itaipava">
     <div>
-      <p>250m² (<strong>31,25m² por pessoa</strong>, no time dos 8) de refúgio no meio das montanhas de Itaipava, todo em madeirão. Tem conforto, tem privacidade e tem aquela vista que meus amigos.</p>
-      <p style="margin-top:14px;">Sala toda envidraçada pra não perder o visual da serra e piscina de 45m² (<strong>5,6m² por pessoa</strong>) gelada pra dar aquele choque térmico. É basicamente um resort particular só nosso mesmo.</p>
+      <p>250m² (<strong>31,25m² por pessoa</strong>) de refúgio em Itaipava, todo em madeirão, com vista pra montanha e piscina de 45m² (<strong>5,6m² por pessoa</strong>) geladinha. Um resort particular só nosso mesmo.</p>
     </div>
   </div>
 </section>
