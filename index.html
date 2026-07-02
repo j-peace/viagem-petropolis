@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Viagem a Petrópolis</title>
+<style>
+  :root {
+    --green-dark: #1f3d2b;
+    --green: #2f5d3f;
+    --gold: #c9a15a;
+    --cream: #faf6ee;
+    --text: #2a2a2a;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Segoe UI', 'Trebuchet MS', Verdana, sans-serif;
+    background: var(--cream);
+    color: var(--text);
+    line-height: 1.6;
+  }
+  .hero {
+    position: relative;
+    min-height: 100vh;
+    background: url('assets/img/capa.png') center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(20,30,20,0.35) 0%, rgba(20,30,20,0.65) 100%);
+  }
+  .hero-content {
+    position: relative;
+    z-index: 1;
+    padding: 24px;
+    max-width: 800px;
+  }
+  .hero-content .eyebrow {
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 0.85rem;
+    color: var(--gold);
+    margin-bottom: 12px;
+  }
+  .hero-content h1 {
+    font-size: clamp(2.2rem, 6vw, 3.8rem);
+    font-weight: 400;
+    margin-bottom: 16px;
+  }
+  .hero-content p.sub {
+    font-size: 1.1rem;
+    opacity: 0.95;
+    margin-bottom: 40px;
+  }
+
+  .countdown {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .countdown .unit {
+    background: rgba(255,255,255,0.12);
+    border: 1px solid rgba(255,255,255,0.35);
+    backdrop-filter: blur(4px);
+    border-radius: 12px;
+    padding: 18px 20px;
+    min-width: 84px;
+  }
+  .countdown .unit .num {
+    font-size: clamp(1.8rem, 4vw, 2.6rem);
+    font-weight: bold;
+    color: var(--gold);
+    font-variant-numeric: tabular-nums;
+  }
+  .countdown .unit .label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 4px;
+  }
+  .countdown-done {
+    font-size: 1.6rem;
+    color: var(--gold);
+    display: none;
+  }
+
+  section {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 80px 24px;
+  }
+  .section-title {
+    text-align: center;
+    font-size: clamp(1.6rem, 4vw, 2.2rem);
+    color: var(--green-dark);
+    margin-bottom: 8px;
+    font-weight: 400;
+  }
+  .section-line {
+    width: 60px;
+    height: 2px;
+    background: var(--gold);
+    margin: 0 auto 40px;
+  }
+
+  .stay {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+  }
+  .stay img {
+    width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+  }
+  .itinerary {
+    display: grid;
+    gap: 20px;
+  }
+  .day-card {
+    background: #fff;
+    border-left: 4px solid var(--gold);
+    border-radius: 8px;
+    padding: 24px 28px;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.06);
+  }
+  .day-card h3 {
+    color: var(--green-dark);
+    font-size: 1.2rem;
+    margin-bottom: 8px;
+    text-transform: capitalize;
+  }
+  .day-card p {
+    font-size: 0.98rem;
+    color: #444;
+  }
+  .day-card .tag {
+    display: inline-block;
+    font-size: 0.75rem;
+    color: var(--gold);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 6px;
+  }
+  .brasil-card {
+    border-left: 8px solid #ffdf00;
+    background: #009c3b;
+  }
+  .brasil-card .tag {
+    display: inline-block;
+    background: #002776;
+    color: #ffdf00;
+    padding: 3px 12px;
+    border-radius: 999px;
+    letter-spacing: 1px;
+  }
+  .brasil-card h3 {
+    color: #ffdf00;
+    font-size: 1.4rem;
+    font-weight: bold;
+  }
+  .brasil-card p {
+    color: #ffffff;
+  }
+
+  .meals-note {
+    text-align: center;
+    margin-bottom: 32px;
+    color: #555;
+    font-style: italic;
+  }
+
+  .people {
+    background: var(--green-dark);
+    color: #fff;
+  }
+  .people .section-title { color: #fff; }
+  .people-row-label {
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.8rem;
+    color: var(--gold);
+    margin-bottom: 14px;
+  }
+  .people-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 14px;
+    margin-bottom: 32px;
+  }
+  .people-grid:last-of-type {
+    margin-bottom: 0;
+  }
+  .people-grid span {
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.3);
+    padding: 10px 22px;
+    border-radius: 999px;
+    font-size: 1rem;
+  }
+
+  footer {
+    text-align: center;
+    padding: 32px;
+    color: #777;
+    font-size: 0.85rem;
+  }
+
+  @media (max-width: 700px) {
+    .stay { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<section class="hero">
+  <div class="hero-content">
+    <div class="eyebrow">16 a 19 de julho · bora ou bora?</div>
+    <h1>Tá chegando a viagem pra Petrópolis</h1>
+    <p class="sub">Itaipava te espera: montanha, comida boa e a zoeira de sempre</p>
+
+    <div class="countdown" id="countdown">
+      <div class="unit"><div class="num" id="days">00</div><div class="label">dias</div></div>
+      <div class="unit"><div class="num" id="hours">00</div><div class="label">horas</div></div>
+      <div class="unit"><div class="num" id="minutes">00</div><div class="label">min</div></div>
+      <div class="unit"><div class="num" id="seconds">00</div><div class="label">seg</div></div>
+    </div>
+    <div class="countdown-done" id="countdown-done">BORA! A viagem já começou</div>
+  </div>
+</section>
+
+<section id="stay">
+  <h2 class="section-title">O pouso da tropa</h2>
+  <div class="section-line"></div>
+  <div class="stay">
+    <img src="assets/img/foto2.png" alt="Casa em Itaipava">
+    <div>
+      <p>250m² (31,25m² por pessoa, no time dos 8) de refúgio no meio das montanhas de Itaipava, todo em madeirão. Tem conforto, tem privacidade e tem aquela vista que meus amigos.</p>
+      <p style="margin-top:14px;">Sala toda envidraçada pra não perder o visual da serra e piscina de 45m² (5,6m² por pessoa) gelada pra dar aquele choque térmico. É basicamente um resort particular só nosso mesmo.</p>
+    </div>
+  </div>
+</section>
+
+<section id="itinerary">
+  <h2 class="section-title">Cardápio do Chefe Felipe + Roteiro</h2>
+  <div class="section-line"></div>
+  <p class="meals-note">Café da manhã e café da tarde caprichados (pão, presunto, muçarela, ovo, café, suco, refri e etc.)</p>
+  <div class="itinerary">
+    <div class="day-card">
+      <span class="tag">Quinta</span>
+      <h3>Chegada da tropa</h3>
+      <p>Curtir a casa, correr no mercado pra abastecer a geladeira. Almoço: macarrão à bolonhesa. Jantar: hambúrguer caseiro.</p>
+    </div>
+    <div class="day-card">
+      <span class="tag">Sexta</span>
+      <h3>Dia do vinho</h3>
+      <p>Almoço: strogonoff com arroz. De tarde, vinícola pra ficar filosófico. Jantar: pizza pra fechar com chave de ouro.</p>
+    </div>
+    <div class="day-card">
+      <span class="tag">Sábado</span>
+      <h3>Turistando</h3>
+      <p>Passeio pela cidade. Almoço: risoto com alguma carne (só não vem com contra filé, combinado?). Jantar: caldo de mandioca pra esquentar.</p>
+    </div>
+    <div class="day-card">
+      <span class="tag">Domingo</span>
+      <h3>Ressaca de saudade</h3>
+      <p>Café da manhã, malas na mão e todo mundo pra casa.</p>
+    </div>
+    <div class="day-card brasil-card">
+      <span class="tag">Extra</span>
+      <h3>Vem hexaaa!!!</h3>
+      <p>Se o Brasil passar, domingo tem Brasil x França na telona da casa!</p>
+    </div>
+  </div>
+</section>
+
+<section class="people">
+  <h2 class="section-title">Tropa da Multiplicação</h2>
+  <div class="section-line"></div>
+  <p class="people-row-label">Quem manda</p>
+  <div class="people-grid">
+    <span>Larissa</span>
+    <span>Lari</span>
+    <span>Giovanna</span>
+    <span>Mariana</span>
+  </div>
+  <p class="people-row-label">Quem obedece</p>
+  <div class="people-grid">
+    <span>Felipe</span>
+    <span>Frater</span>
+    <span>Lucas</span>
+    <span>Tiago</span>
+  </div>
+</section>
+
+<footer>
+  Feito com amor pra viagem a Petrópolis
+</footer>
+
+<script>
+  var targetDate = new Date("2026-07-16T00:00:00-03:00").getTime();
+
+  function updateCountdown() {
+    var now = new Date().getTime();
+    var diff = targetDate - now;
+
+    if (diff <= 0) {
+      document.getElementById('countdown').style.display = 'none';
+      document.getElementById('countdown-done').style.display = 'block';
+      return;
+    }
+
+    var days = Math.floor(diff / (1000 * 60 * 60 * 24));
+    var hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+    document.getElementById('days').textContent = String(days).padStart(2, '0');
+    document.getElementById('hours').textContent = String(hours).padStart(2, '0');
+    document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
+    document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
+  }
+
+  updateCountdown();
+  setInterval(updateCountdown, 1000);
+</script>
+
+</body>
+</html>
