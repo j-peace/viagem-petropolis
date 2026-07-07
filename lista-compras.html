@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lista de Compras — Viagem a Petrópolis</title>
+<style>
+  :root {
+    --green-dark: #1f3d2b;
+    --green: #2f5d3f;
+    --gold: #c9a15a;
+    --cream: #faf6ee;
+    --text: #2a2a2a;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Segoe UI', 'Trebuchet MS', Verdana, sans-serif;
+    background: var(--cream);
+    color: var(--text);
+    line-height: 1.6;
+  }
+  header {
+    background: var(--green-dark);
+    color: #fff;
+    text-align: center;
+    padding: 48px 24px 36px;
+  }
+  header .eyebrow {
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 0.85rem;
+    color: var(--gold);
+    margin-bottom: 10px;
+  }
+  header h1 {
+    font-size: clamp(1.6rem, 5vw, 2.4rem);
+    font-weight: 800;
+  }
+  header a.back-link {
+    display: inline-block;
+    margin-top: 18px;
+    color: #fff;
+    opacity: 0.85;
+    font-size: 0.9rem;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(255,255,255,0.4);
+  }
+  header a.back-link:hover { opacity: 1; }
+
+  main {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 40px 20px 80px;
+  }
+  .card {
+    background: #fff;
+    border-radius: 10px;
+    padding: 24px 28px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.06);
+    border-left: 4px solid var(--gold);
+  }
+  .card.base {
+    border-left: 4px solid var(--green);
+    background: #f3f7f2;
+  }
+  .card h2 {
+    color: var(--green-dark);
+    font-size: 1.15rem;
+    margin-bottom: 14px;
+  }
+  .card ul {
+    list-style: none;
+  }
+  .card li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 6px 0;
+    font-size: 0.98rem;
+  }
+  .card li input[type="checkbox"] {
+    margin-top: 4px;
+    width: 17px;
+    height: 17px;
+    accent-color: var(--green);
+    flex-shrink: 0;
+  }
+  .card li label.checked {
+    text-decoration: line-through;
+    color: #999;
+  }
+  .card .note {
+    font-size: 0.9rem;
+    color: #666;
+    font-style: italic;
+    margin-top: 4px;
+    padding-left: 27px;
+  }
+  footer {
+    text-align: center;
+    padding: 32px;
+    color: #777;
+    font-size: 0.85rem;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="eyebrow">Viagem a Petrópolis · 16 a 19 de julho</div>
+  <h1>Lista de Compras</h1>
+  <a class="back-link" href="index.html">← voltar pra página da viagem</a>
+</header>
+
+<main>
+
+  <div class="card base">
+    <h2>Base — itens usados em vários pratos</h2>
+    <ul>
+      <li><input type="checkbox" id="i0"><label for="i0">Cebola — 7 unidades (5 bolonhesa + 2 hambúrguer)</label></li>
+      <li><input type="checkbox" id="i1"><label for="i1">Alho — 3 cabeças (bolonhesa)</label></li>
+      <li><input type="checkbox" id="i2"><label for="i2">Azeite — 1 pequeno (bolonhesa)</label></li>
+      <li><input type="checkbox" id="i3"><label for="i3">Sal</label></li>
+      <li><input type="checkbox" id="i4"><label for="i4">Pimenta-do-reino</label></li>
+      <li><input type="checkbox" id="i5"><label for="i5">Orégano</label></li>
+      <li><input type="checkbox" id="i6"><label for="i6">Muçarela — 800g (café) + 16 fatias (hambúrguer) + meio quilo (pizza)</label></li>
+      <li><input type="checkbox" id="i7"><label for="i7">Presunto — 800g (café) + um pouco menos que a muçarela (hambúrguer)</label></li>
+      <li><input type="checkbox" id="i8"><label for="i8">Tomate — quantidade boa (hambúrguer/pizza) + 2 tomatinhos (marguerita)</label></li>
+      <li><input type="checkbox" id="i9"><label for="i9">Bacon — a gosto do Fillipe (hambúrguer) + meio kg (caldo de mandioca)</label></li>
+      <li><input type="checkbox" id="i10"><label for="i10">Cheiro-verde/cebolinha — 2 maços (fraldinha + caldo)</label></li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2>Café da manhã</h2>
+    <ul>
+      <li><input type="checkbox" id="i11"><label for="i11">4 pacotes de pão de forma</label></li>
+      <li><input type="checkbox" id="i12"><label for="i12">Ovos — 30 ovos</label></li>
+      <li><input type="checkbox" id="i13"><label for="i13">1 manteiga grande</label></li>
+    </ul>
+    <p class="note">Presunto e muçarela: está na base</p>
+  </div>
+
+  <div class="card">
+    <h2>Macarrão à bolonhesa</h2>
+    <ul>
+      <li><input type="checkbox" id="i14"><label for="i14">Macarrão — 1,2 kg (2 pacotes)</label></li>
+      <li><input type="checkbox" id="i15"><label for="i15">Carne moída — 1,5 kg</label></li>
+      <li><input type="checkbox" id="i16"><label for="i16">Molho de tomate — 4 sachês (300g cada) + 1 para pizza</label></li>
+      <li><input type="checkbox" id="i17"><label for="i17">Queijo parmesão ralado — 150g</label></li>
+    </ul>
+    <p class="note">Cebola, alho, azeite, sal, pimenta, orégano: está na base</p>
+  </div>
+
+  <div class="card">
+    <h2>Hambúrguer caseiro</h2>
+    <ul>
+      <li><input type="checkbox" id="i18"><label for="i18">Carne moída — 2 kg</label></li>
+      <li><input type="checkbox" id="i19"><label for="i19">Pão de hambúrguer — 2 pacotes de 10 unidades</label></li>
+      <li><input type="checkbox" id="i20"><label for="i20">Alface — 2 pés</label></li>
+      <li><input type="checkbox" id="i21"><label for="i21">Maionese — 1 pote</label></li>
+      <li><input type="checkbox" id="i22"><label for="i22">Ketchup — 1 frasco</label></li>
+      <li><input type="checkbox" id="i23"><label for="i23">Batata congelada — 2 kg</label></li>
+    </ul>
+    <p class="note">Cebola, muçarela, presunto, tomate, bacon: está na base</p>
+  </div>
+
+  <div class="card">
+    <h2>Arroz com fraldinha</h2>
+    <ul>
+      <li><input type="checkbox" id="i24"><label for="i24">Fraldinha — 2 kg</label></li>
+      <li><input type="checkbox" id="i25"><label for="i25">Arroz branco — 1 kg</label></li>
+    </ul>
+    <p class="note">Cheiro-verde/cebolinha: está na base</p>
+  </div>
+
+  <div class="card">
+    <h2>Pizza</h2>
+    <ul>
+      <li><input type="checkbox" id="i26"><label for="i26">Fermento biológico — 3 unidades</label></li>
+      <li><input type="checkbox" id="i27"><label for="i27">Farinha de trigo — 1 pacote</label></li>
+      <li><input type="checkbox" id="i28"><label for="i28">Fubá — 1</label></li>
+      <li><input type="checkbox" id="i29"><label for="i29"><strong>Sabor: Milho com Bacon</strong> — 1 lata de milho e bacon</label></li>
+      <li><input type="checkbox" id="i30"><label for="i30"><strong>Sabor: Marguerita</strong> — 1 requeijão forneável grande + manjericão</label></li>
+      <li><input type="checkbox" id="i31"><label for="i31"><strong>Sabor: Agridoce de Lombo com Abacaxi</strong> (ou peito de peru como segunda opção)</label></li>
+    </ul>
+    <p class="note">Muçarela, tomate: está na base</p>
+  </div>
+
+  <div class="card">
+    <h2>Risoto com carne</h2>
+    <ul>
+      <li><input type="checkbox" id="i32"><label for="i32">Creme de leite — 2 caixinhas</label></li>
+      <li><input type="checkbox" id="i33"><label for="i33">Arroz arbóreo — 1 kg</label></li>
+      <li><input type="checkbox" id="i34"><label for="i34">Carne alcatra — 1,5 kg</label></li>
+      <li><input type="checkbox" id="i35"><label for="i35">Vinho branco seco — 250 ml (opcional)</label></li>
+      <li><input type="checkbox" id="i36"><label for="i36">Caldo Knorr de bacon — 2 unidades</label></li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2>Caldo de mandioca</h2>
+    <ul>
+      <li><input type="checkbox" id="i37"><label for="i37">Mandioca — 1,5 kg</label></li>
+      <li><input type="checkbox" id="i38"><label for="i38">Calabresa — 2 gomos</label></li>
+      <li><input type="checkbox" id="i39"><label for="i39">Maçã de peito — 1 kg</label></li>
+    </ul>
+    <p class="note">Bacon, cebolinha: está na base</p>
+  </div>
+
+  <div class="card">
+    <h2>Bebidas</h2>
+    <ul>
+      <li><input type="checkbox" id="i40"><label for="i40">Refrigerante</label></li>
+      <li><input type="checkbox" id="i41"><label for="i41">Suco</label></li>
+      <li><input type="checkbox" id="i42"><label for="i42">Água com gás — bastante</label></li>
+      <li><input type="checkbox" id="i43"><label for="i43">Água normal (confirmar com Lari e Frather)</label></li>
+    </ul>
+  </div>
+
+</main>
+
+<footer>
+  Feito com amor pra viagem a Petrópolis
+</footer>
+
+<script>
+  document.querySelectorAll('.card input[type="checkbox"]').forEach(function (box) {
+    var saved = localStorage.getItem('compra-' + box.id);
+    var label = document.querySelector('label[for="' + box.id + '"]');
+    if (saved === 'true') {
+      box.checked = true;
+      label.classList.add('checked');
+    }
+    box.addEventListener('change', function () {
+      localStorage.setItem('compra-' + box.id, box.checked);
+      label.classList.toggle('checked', box.checked);
+    });
+  });
+</script>
+
+</body>
+</html>

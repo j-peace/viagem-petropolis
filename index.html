@@ -148,6 +148,12 @@
     font-size: 0.98rem;
     color: #444;
   }
+  .day-card p.meal-line {
+    margin-top: 6px;
+  }
+  .day-card p.meal-line strong {
+    color: var(--green-dark);
+  }
   .day-card .tag {
     display: inline-block;
     font-size: 0.75rem;
@@ -164,9 +170,11 @@
     display: inline-block;
     background: #002776;
     color: #ffdf00;
-    padding: 3px 12px;
+    padding: 4px 16px;
     border-radius: 999px;
     letter-spacing: 1px;
+    white-space: nowrap;
+    line-height: 1.4;
   }
   .brasil-card h3 {
     color: #ffdf00;
@@ -182,6 +190,106 @@
     margin-bottom: 32px;
     color: #555;
     font-style: italic;
+  }
+  .meals-note .brand-link {
+    color: #1a73e8;
+    text-decoration: underline;
+    font-style: normal;
+  }
+
+  .shopping-link-wrap {
+    text-align: center;
+    margin-bottom: 32px;
+  }
+  .shopping-link {
+    display: inline-block;
+    background: var(--gold);
+    color: var(--green-dark);
+    padding: 14px 32px;
+    border-radius: 999px;
+    text-decoration: none;
+    font-size: 1.02rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    box-shadow: 0 6px 18px rgba(201,161,90,0.45);
+    transition: transform 0.15s, box-shadow 0.15s;
+  }
+  .shopping-link:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 22px rgba(201,161,90,0.55);
+  }
+
+  .weather-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+  }
+  .weather-card {
+    background: #fff;
+    border-radius: 10px;
+    padding: 20px 12px;
+    text-align: center;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.06);
+    border-top: 4px solid var(--gold);
+  }
+  .weather-card .tag {
+    display: block;
+    font-size: 0.75rem;
+    color: var(--gold);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 4px;
+  }
+  .weather-card .wdate {
+    font-size: 0.8rem;
+    color: #777;
+    margin-bottom: 10px;
+  }
+  .weather-card .wicon {
+    font-size: 2.4rem;
+    margin-bottom: 8px;
+  }
+  .weather-card .wtemp {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: var(--green-dark);
+  }
+  .weather-card .wtemp .min {
+    color: #888;
+    font-weight: normal;
+  }
+  .weather-card .wrain {
+    margin-top: 6px;
+    font-size: 0.85rem;
+    color: #3a6ea5;
+  }
+  .weather-note {
+    text-align: center;
+    margin-top: 20px;
+    color: #777;
+    font-size: 0.85rem;
+    font-style: italic;
+  }
+  .google-check-wrap {
+    text-align: center;
+    margin-top: 10px;
+  }
+  .google-check-link {
+    display: inline-block;
+    background: #fff;
+    color: var(--green-dark);
+    border: 1px solid var(--gold);
+    padding: 8px 20px;
+    border-radius: 999px;
+    text-decoration: none;
+    font-size: 0.85rem;
+    transition: background 0.2s;
+  }
+  .google-check-link:hover {
+    background: var(--cream);
+  }
+  @media (max-width: 700px) {
+    .weather-grid { grid-template-columns: 1fr 1fr; }
   }
 
   .people {
@@ -261,22 +369,32 @@
 <section id="itinerary">
   <h2 class="section-title">Cardápio do Chefe Felipe + Roteiro</h2>
   <div class="section-line"></div>
-  <p class="meals-note">Café da manhã e café da tarde caprichados (pão, presunto, muçarela, ovo, café, suco, refri e etc.)</p>
+  <div class="shopping-link-wrap">
+    <a class="shopping-link" href="lista-compras.html">Ver lista de compras</a>
+  </div>
+  <p class="meals-note">Café da manhã e café da tarde caprichados (pão, presunto, muçarela, ovo, café, suco, refri e etc.)<br>Com direito a chimarrão e Café especial da <a href="https://www.instagram.com/43box.coffee/" target="_blank" rel="noopener" class="brand-link">43box</a>.</p>
   <div class="itinerary">
     <div class="day-card">
       <span class="tag">Quinta</span>
       <h3>Chegada da tropa</h3>
-      <p>Curtir a casa, correr no mercado pra abastecer a geladeira. Almoço: macarrão à bolonhesa. Jantar: hambúrguer caseiro.</p>
+      <p><strong>Pré alinhado pra sair as 3:00 do dia 15 pra 16.</strong></p>
+      <p>Curtir a casa, correr no mercado pra abastecer a geladeira.</p>
+      <p class="meal-line"><strong>Almoço:</strong> risoto com alguma carne (só não vem com contra filé, combinado?)</p>
+      <p class="meal-line"><strong>Janta:</strong> hambúrguer caseiro</p>
     </div>
     <div class="day-card">
       <span class="tag">Sexta</span>
       <h3>Dia do vinho</h3>
-      <p>Almoço: strogonoff com arroz. De tarde, vinícola pra ficar filosófico. Jantar: pizza pra fechar com chave de ouro.</p>
+      <p class="meal-line"><strong>Almoço:</strong> arroz com fraldinha</p>
+      <p>De tarde, vinícola pra ficar filosófico.</p>
+      <p class="meal-line"><strong>Janta:</strong> pizza artesanal pra fechar com chave de ouro</p>
     </div>
     <div class="day-card">
       <span class="tag">Sábado</span>
       <h3>Turistando</h3>
-      <p>Passeio pela cidade. Almoço: risoto com alguma carne (só não vem com contra filé, combinado?). Jantar: caldo de mandioca pra esquentar.</p>
+      <p>Passeio pela cidade.</p>
+      <p class="meal-line"><strong>Almoço:</strong> macarrão à bolonhesa</p>
+      <p class="meal-line"><strong>Janta:</strong> caldo de mandioca pra esquentar</p>
     </div>
     <div class="day-card">
       <span class="tag">Domingo</span>
@@ -284,10 +402,37 @@
       <p>Café da manhã, malas na mão e todo mundo pra casa.</p>
     </div>
     <div class="day-card brasil-card">
-      <span class="tag">Extra</span>
-      <h3>Vem hexaaa!!!</h3>
-      <p>Se o Brasil passar, domingo tem Brasil x França na telona da casa!</p>
+      <span class="tag">Extra adiado</span>
+      <h3>Vem hexa!</h3>
+      <p>O sonho do hexa foi adiado pra 21/07/2030. Qual viagem esse dia?</p>
     </div>
+  </div>
+</section>
+
+<section id="weather">
+  <h2 class="section-title">Previsão do tempo</h2>
+  <div class="section-line"></div>
+  <div class="weather-grid" id="weather-grid">
+    <div class="weather-card" data-date="2026-07-16">
+      <span class="tag">Quinta 16/07</span>
+      <div class="wdate">carregando...</div>
+    </div>
+    <div class="weather-card" data-date="2026-07-17">
+      <span class="tag">Sexta 17/07</span>
+      <div class="wdate">carregando...</div>
+    </div>
+    <div class="weather-card" data-date="2026-07-18">
+      <span class="tag">Sábado 18/07</span>
+      <div class="wdate">carregando...</div>
+    </div>
+    <div class="weather-card" data-date="2026-07-19">
+      <span class="tag">Domingo 19/07</span>
+      <div class="wdate">carregando...</div>
+    </div>
+  </div>
+  <p class="weather-note"><span id="weather-note-text">Usa a api gratuita open meteo. Perto da data fica mais confiável.</span></p>
+  <div class="google-check-wrap">
+    <a class="google-check-link" href="https://www.google.com/search?q=previs%C3%A3o+do+tempo+itaipava+rj" target="_blank" rel="noopener">Para dar um double check acesse o Google aqui</a>
   </div>
 </section>
 
@@ -315,7 +460,7 @@
 </footer>
 
 <script>
-  var targetDate = new Date("2026-07-16T00:00:00-03:00").getTime();
+  var targetDate = new Date("2026-07-16T03:00:00-03:00").getTime();
 
   function updateCountdown() {
     var now = new Date().getTime();
@@ -340,6 +485,56 @@
 
   updateCountdown();
   setInterval(updateCountdown, 1000);
+
+  var weatherIcons = {
+    0: '☀️', 1: '🌤️', 2: '⛅', 3: '☁️',
+    45: '🌫️', 48: '🌫️',
+    51: '🌦️', 53: '🌦️', 55: '🌦️', 56: '🌦️', 57: '🌦️',
+    61: '🌧️', 63: '🌧️', 65: '🌧️', 66: '🌧️', 67: '🌧️',
+    71: '❄️', 73: '❄️', 75: '❄️', 77: '❄️',
+    80: '🌧️', 81: '🌧️', 82: '🌧️',
+    85: '❄️', 86: '❄️',
+    95: '⛈️', 96: '⛈️', 99: '⛈️'
+  };
+
+  function pick(daily, field, idx) {
+    var iconVal = daily[field + '_icon_seamless'][idx];
+    return iconVal !== null ? iconVal : daily[field + '_best_match'][idx];
+  }
+
+  function fetchWeather() {
+    var url = 'https://api.open-meteo.com/v1/forecast?latitude=-22.3833&longitude=-43.1333'
+      + '&daily=weathercode,temperature_2m_max,temperature_2m_min,precipitation_probability_max'
+      + '&timezone=America%2FSao_Paulo&start_date=2026-07-16&end_date=2026-07-19'
+      + '&models=icon_seamless,best_match';
+
+    fetch(url)
+      .then(function (res) { return res.json(); })
+      .then(function (data) {
+        if (!data.daily || !data.daily.time) throw new Error('sem dados');
+        data.daily.time.forEach(function (date, idx) {
+          var card = document.querySelector('.weather-card[data-date="' + date + '"]');
+          if (!card) return;
+          var code = pick(data.daily, 'weathercode', idx);
+          var max = Math.round(pick(data.daily, 'temperature_2m_max', idx));
+          var min = Math.round(pick(data.daily, 'temperature_2m_min', idx));
+          var rain = pick(data.daily, 'precipitation_probability_max', idx);
+          card.querySelector('.wdate').outerHTML =
+            '<div class="wicon">' + (weatherIcons[code] || '🌡️') + '</div>' +
+            '<div class="wtemp">' + max + '° <span class="min">' + min + '°</span></div>' +
+            '<div class="wrain">' + rain + '% de chuva</div>';
+        });
+      })
+      .catch(function () {
+        document.getElementById('weather-note-text').textContent =
+          'Previsão ainda não disponível pra essas datas — a Open-Meteo só prevê com ~16 dias de antecedência. Volte mais perto da viagem!';
+        document.querySelectorAll('.weather-card .wdate').forEach(function (el) {
+          el.textContent = '—';
+        });
+      });
+  }
+
+  fetchWeather();
 </script>
 
 </body>
