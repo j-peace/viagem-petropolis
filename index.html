@@ -100,7 +100,7 @@
   section {
     max-width: 960px;
     margin: 0 auto;
-    padding: 80px 24px;
+    padding: 56px 24px;
   }
   .section-title {
     text-align: center;
@@ -131,6 +131,7 @@
     margin-top: 20px;
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     gap: 12px;
   }
   .how-to-arrive-btn {
@@ -143,6 +144,7 @@
     font-size: 0.95rem;
     font-weight: 600;
     letter-spacing: 0.3px;
+    text-align: center;
     cursor: pointer;
     transition: background 0.2s;
     font-family: inherit;
@@ -185,6 +187,8 @@
     border-radius: 12px;
     max-width: 440px;
     width: 100%;
+    max-height: 85vh;
+    overflow-y: auto;
     padding: 32px 28px;
     box-shadow: 0 20px 60px rgba(0,0,0,0.3);
   }
@@ -336,7 +340,7 @@
     background: #fff;
     border-left: 4px solid var(--gold);
     border-radius: 8px;
-    padding: 24px 28px;
+    padding: 20px 20px;
     box-shadow: 0 4px 14px rgba(0,0,0,0.06);
   }
   .day-card h3 {
@@ -582,6 +586,22 @@
     .people-grid { gap: 8px; }
     .people-grid span { padding: 6px 12px; font-size: 0.78rem; }
   }
+
+  @media (max-width: 600px) {
+    section {
+      padding: 40px 12px;
+    }
+    .day-card {
+      padding: 16px 16px;
+    }
+    .breakfast-card {
+      padding: 16px 16px;
+    }
+    .modal-box {
+      padding: 24px 18px;
+      max-height: 90vh;
+    }
+  }
 </style>
 </head>
 <body>
@@ -656,10 +676,8 @@
       <li><span class="li-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 13l2-5a2 2 0 012-1h10a2 2 0 012 1l2 5"></path><rect x="1" y="13" width="22" height="6" rx="1"></rect><circle cx="6.5" cy="19" r="1.5"></circle><circle cx="17.5" cy="19" r="1.5"></circle></svg></span>Estacionamento gratuito (5 vagas)</li>
       <li><span class="li-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="10" rx="2"></rect><path d="M7 11V7a5 5 0 0110 0v4"></path></svg></span>Condomínio fechado com portaria</li>
       <li><span class="li-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="3"></rect><circle cx="8" cy="8" r="1" fill="currentColor" stroke="none"></circle><circle cx="16" cy="8" r="1" fill="currentColor" stroke="none"></circle><circle cx="12" cy="12" r="1" fill="currentColor" stroke="none"></circle><circle cx="8" cy="16" r="1" fill="currentColor" stroke="none"></circle><circle cx="16" cy="16" r="1" fill="currentColor" stroke="none"></circle></svg></span>Jogos de tabuleiro e jogos gigantes</li>
-      <li><span class="li-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 15c2 1.4 4 1.4 6 0s4-1.4 6 0 4 1.4 6 0"></path><path d="M2 19c2 1.4 4 1.4 6 0s4-1.4 6 0 4 1.4 6 0"></path></svg></span>Piscina interna, aberta 24h o ano todo</li>
+      <li><span class="li-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 15c2 1.4 4 1.4 6 0s4-1.4 6 0 4 1.4 6 0"></path><path d="M2 19c2 1.4 4 1.4 6 0s4-1.4 6 0 4 1.4 6 0"></path></svg></span>Piscina interna</li>
       <li><span class="li-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9.59 4.59A2 2 0 1111 8H2"></path><path d="M12.59 19.41A2 2 0 1014 16H2"></path><path d="M17.73 7.73A2.5 2.5 0 1119.5 12H2"></path></svg></span>Secador de cabelo e ferro de passar</li>
-      <li><span class="li-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="10" x2="20" y2="10"></line><path d="M4 10a8 4 0 0016 0"></path><line x1="7" y1="14" x2="7" y2="20"></line><line x1="17" y1="14" x2="17" y2="20"></line></svg></span>Churrasqueira a carvão + utensílios de churrasco</li>
-      <li><span class="li-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2"></rect><circle cx="12" cy="14" r="5"></circle><circle cx="12" cy="14" r="2"></circle><circle cx="7.5" cy="5.5" r="0.8" fill="currentColor" stroke="none"></circle><circle cx="10.5" cy="5.5" r="0.8" fill="currentColor" stroke="none"></circle></svg></span>Máquina de lavar e secar roupa</li>
     </ul>
     <a class="modal-map-link" href="https://www.airbnb.com.br/rooms/1661007944853819713" target="_blank" rel="noopener">Ver anúncio completo no Airbnb</a>
   </div>
@@ -699,7 +717,7 @@
     </div>
     <div>
       <h3>Café da manhã &amp; da tarde</h3>
-      <p>Pão, presunto, muçarela, ovo, café.</p>
+      <p>Pão, presunto, muçarela, ovo.</p>
       <p>Com direito a chimarrão e café especial da <a href="https://www.instagram.com/43box.coffee/" target="_blank" rel="noopener" class="brand-link">43box</a>.</p>
     </div>
   </div>
@@ -763,7 +781,7 @@
   </div>
   <p class="weather-note"><span id="weather-note-text">Usa a api gratuita open meteo. Perto da data fica mais confiável.</span></p>
   <div class="google-check-wrap">
-    <a class="google-check-link" href="https://www.google.com/search?q=previs%C3%A3o+do+tempo+itaipava+rj" target="_blank" rel="noopener">Para dar um double check acesse o Google aqui</a>
+    <a class="google-check-link" href="https://www.google.com/search?q=previs%C3%A3o+do+tempo+itaipava+rj" target="_blank" rel="noopener">Double check acesse o Google aqui</a>
   </div>
 </section>
 
