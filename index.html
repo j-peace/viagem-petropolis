@@ -127,6 +127,207 @@
     border-radius: 12px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.15);
   }
+  .how-to-arrive-wrap {
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .how-to-arrive-btn {
+    display: inline-block;
+    background: var(--green-dark);
+    color: #fff;
+    border: none;
+    padding: 12px 26px;
+    border-radius: 999px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    cursor: pointer;
+    transition: background 0.2s;
+    font-family: inherit;
+  }
+  .how-to-arrive-btn:hover {
+    background: var(--green);
+  }
+  .how-to-arrive-btn.secondary-btn {
+    background: transparent;
+    color: var(--green-dark);
+    border: 1px solid var(--green-dark);
+  }
+  .how-to-arrive-btn.secondary-btn:hover {
+    background: var(--green-dark);
+    color: #fff;
+  }
+  .how-to-arrive-btn.day-btn {
+    display: block;
+    margin: 10px 0;
+    padding: 8px 18px;
+    font-size: 0.85rem;
+  }
+
+  .modal-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(20,30,20,0.55);
+    z-index: 100;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+  }
+  .modal-overlay.open {
+    display: flex;
+  }
+  .modal-box {
+    position: relative;
+    background: var(--cream);
+    border-radius: 12px;
+    max-width: 440px;
+    width: 100%;
+    padding: 32px 28px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+  }
+  .modal-box h3 {
+    color: var(--green-dark);
+    font-size: 1.3rem;
+    margin-bottom: 14px;
+  }
+  .modal-address-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    margin-bottom: 14px;
+  }
+  .modal-address {
+    font-weight: 700;
+    color: var(--text);
+  }
+  .copy-btn {
+    flex-shrink: 0;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 2px;
+    color: var(--green-dark);
+    opacity: 0.7;
+    transition: opacity 0.15s;
+  }
+  .copy-btn:hover {
+    opacity: 1;
+  }
+  .copy-btn svg {
+    width: 18px;
+    height: 18px;
+    display: block;
+  }
+  .copy-btn.copied {
+    color: var(--green);
+    opacity: 1;
+  }
+  .copy-btn-inline {
+    vertical-align: middle;
+    margin: 0 2px;
+  }
+  .copy-btn-inline svg {
+    width: 14px;
+    height: 14px;
+  }
+  .modal-list {
+    list-style: none;
+    margin-bottom: 16px;
+  }
+  .modal-list li {
+    font-size: 0.92rem;
+    color: #444;
+    padding: 6px 0 6px 18px;
+    position: relative;
+    border-bottom: 1px solid rgba(0,0,0,0.06);
+  }
+  .modal-list li:last-child {
+    border-bottom: none;
+  }
+  .modal-list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 15px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--gold);
+  }
+  .modal-list.icon-list li {
+    padding-left: 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .modal-list.icon-list li::before {
+    content: none;
+  }
+  .li-icon {
+    flex-shrink: 0;
+    width: 22px;
+    height: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--green-dark);
+  }
+  .li-icon svg {
+    width: 19px;
+    height: 19px;
+  }
+  .modal-schedule {
+    font-size: 0.92rem;
+    color: #444;
+    margin-bottom: 6px;
+  }
+  .modal-price {
+    font-size: 0.92rem;
+    color: #444;
+    margin-bottom: 4px;
+  }
+  .modal-links-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 10px;
+  }
+  .modal-links-row .modal-map-link {
+    margin-top: 0;
+  }
+  .modal-note {
+    font-size: 0.92rem;
+    color: #555;
+    margin-bottom: 12px;
+  }
+  .modal-close {
+    position: absolute;
+    top: 12px;
+    right: 16px;
+    background: none;
+    border: none;
+    font-size: 1.6rem;
+    line-height: 1;
+    color: #888;
+    cursor: pointer;
+  }
+  .modal-close:hover {
+    color: var(--text);
+  }
+  .modal-map-link {
+    display: inline-block;
+    margin-top: 8px;
+    background: var(--gold);
+    color: var(--green-dark);
+    padding: 12px 26px;
+    border-radius: 999px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.95rem;
+  }
   .itinerary {
     display: grid;
     gap: 20px;
@@ -185,16 +386,49 @@
     color: #ffffff;
   }
 
-  .meals-note {
-    text-align: center;
+  .breakfast-card {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background: linear-gradient(135deg, #fff8ea, #fdf1da);
+    border: 1px solid rgba(201,161,90,0.4);
+    border-left: 5px solid var(--gold);
+    border-radius: 10px;
+    padding: 20px 26px;
     margin-bottom: 32px;
-    color: #555;
-    font-style: italic;
+    box-shadow: 0 6px 18px rgba(201,161,90,0.18);
   }
-  .meals-note .brand-link {
+  .breakfast-icon {
+    flex-shrink: 0;
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background: var(--gold);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .breakfast-icon svg {
+    width: 26px;
+    height: 26px;
+  }
+  .breakfast-card h3 {
+    color: var(--green-dark);
+    font-size: 1.1rem;
+    margin-bottom: 4px;
+  }
+  .breakfast-card p {
+    font-size: 0.92rem;
+    color: #555;
+    margin: 0;
+  }
+  .breakfast-card .brand-link {
     color: #1a73e8;
     text-decoration: underline;
-    font-style: normal;
+  }
+  @media (max-width: 600px) {
+    .breakfast-card { flex-direction: column; text-align: center; }
   }
 
   .shopping-link-wrap {
@@ -362,9 +596,83 @@
     <img src="assets/img/foto2.png" alt="Casa em Itaipava">
     <div>
       <p>250m² (<strong>31,25m² por pessoa</strong>) de refúgio em Itaipava, todo em madeirão, com vista pra montanha e piscina de 45m² (<strong>5,6m² por pessoa</strong>) geladinha. Um resort particular só nosso mesmo.</p>
+      <div class="how-to-arrive-wrap">
+        <button type="button" class="how-to-arrive-btn" id="how-to-arrive-btn">Como chegar</button>
+        <button type="button" class="how-to-arrive-btn secondary-btn" id="house-items-btn">O que tem na casa</button>
+      </div>
     </div>
   </div>
 </section>
+
+<div class="modal-overlay" id="map-modal-overlay">
+  <div class="modal-box">
+    <button type="button" class="modal-close" id="map-modal-close" aria-label="Fechar">&times;</button>
+    <h3>Como chegar</h3>
+    <div class="modal-address-row">
+      <p class="modal-address" id="address-text">Estrada União e Indústria, 26000 — Pedro do Rio, Petrópolis/RJ, 25770-000</p>
+      <button type="button" class="copy-btn" data-copy="Estrada União e Indústria, 26000 — Pedro do Rio, Petrópolis/RJ, 25770-000" aria-label="Copiar endereço" title="Copiar endereço">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="12" height="12" rx="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+      </button>
+    </div>
+    <p class="modal-note">A entrada da subida pro condomínio não tem placa (é considerada rua da prefeitura). É só continuar subindo até achar a entrada principal do <strong>Condomínio Highland</strong>.</p>
+    <p class="modal-note">Se preferir, busque direto no Google/Waze por<br>
+      <strong>"Toucan Wood House"</strong>
+      <button type="button" class="copy-btn copy-btn-inline" data-copy="Toucan Wood House" aria-label="Copiar Toucan Wood House" title="Copiar">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="12" height="12" rx="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+      </button><br>
+      ou <strong>"Condomínio Highland"</strong>
+      <button type="button" class="copy-btn copy-btn-inline" data-copy="Condomínio Highland" aria-label="Copiar Condomínio Highland" title="Copiar">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="12" height="12" rx="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+      </button>
+    </p>
+    <a class="modal-map-link" href="https://goo.gl/maps/os2q9SdVfULZh3pv7?g_st=aw" target="_blank" rel="noopener">Abrir no mapa</a>
+  </div>
+</div>
+
+<div class="modal-overlay" id="house-items-modal-overlay">
+  <div class="modal-box">
+    <button type="button" class="modal-close" id="house-items-modal-close" aria-label="Fechar">&times;</button>
+    <h3>O que tem na casa</h3>
+    <ul class="modal-list icon-list">
+      <li><span class="li-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 20L9 9l4 6 3-5 5 10H3z"></path></svg></span>Varanda/quintal com vista pra montanha e rede</li>
+      <li><span class="li-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c4 0 7-3 7-7 0-4-3-6-4-9-1 2-2 3-2 5 0-2-1-4-3-6-1 4-5 6-5 10 0 4 3 7 7 7z"></path></svg></span>Lareira a lenha</li>
+      <li><span class="li-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11h16v2a8 8 0 01-16 0v-2z"></path><path d="M4 11V9a2 2 0 012-2h12a2 2 0 012 2v2"></path><line x1="2" y1="9" x2="4" y2="9"></line><line x1="20" y1="9" x2="22" y2="9"></line></svg></span>Cozinha completa (fogão, forno e geladeira)</li>
+      <li><span class="li-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a4 4 0 010 8h-1"></path><path d="M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8z"></path><line x1="6" y1="1" x2="6" y2="4"></line><line x1="10" y1="1" x2="10" y2="4"></line><line x1="14" y1="1" x2="14" y2="4"></line></svg></span>Cafeteira, liquidificador e freezer</li>
+      <li><span class="li-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 14.76V3.5a2.5 2.5 0 00-5 0v11.26a4.5 4.5 0 105 0z"></path></svg></span>Ar-condicionado e aquecimento</li>
+      <li><span class="li-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.55a11 11 0 0114.08 0"></path><path d="M1.42 9a16 16 0 0121.16 0"></path><path d="M8.53 16.11a6 6 0 016.95 0"></path><line x1="12" y1="20" x2="12.01" y2="20"></line></svg></span>Wi-Fi e TV</li>
+      <li><span class="li-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 13l2-5a2 2 0 012-1h10a2 2 0 012 1l2 5"></path><rect x="1" y="13" width="22" height="6" rx="1"></rect><circle cx="6.5" cy="19" r="1.5"></circle><circle cx="17.5" cy="19" r="1.5"></circle></svg></span>Estacionamento gratuito (5 vagas)</li>
+      <li><span class="li-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="10" rx="2"></rect><path d="M7 11V7a5 5 0 0110 0v4"></path></svg></span>Condomínio fechado com portaria</li>
+      <li><span class="li-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="3"></rect><circle cx="8" cy="8" r="1" fill="currentColor" stroke="none"></circle><circle cx="16" cy="8" r="1" fill="currentColor" stroke="none"></circle><circle cx="12" cy="12" r="1" fill="currentColor" stroke="none"></circle><circle cx="8" cy="16" r="1" fill="currentColor" stroke="none"></circle><circle cx="16" cy="16" r="1" fill="currentColor" stroke="none"></circle></svg></span>Jogos de tabuleiro e jogos gigantes</li>
+      <li><span class="li-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 15c2 1.4 4 1.4 6 0s4-1.4 6 0 4 1.4 6 0"></path><path d="M2 19c2 1.4 4 1.4 6 0s4-1.4 6 0 4 1.4 6 0"></path></svg></span>Piscina interna, aberta 24h o ano todo</li>
+      <li><span class="li-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9.59 4.59A2 2 0 1111 8H2"></path><path d="M12.59 19.41A2 2 0 1014 16H2"></path><path d="M17.73 7.73A2.5 2.5 0 1119.5 12H2"></path></svg></span>Secador de cabelo e ferro de passar</li>
+      <li><span class="li-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="10" x2="20" y2="10"></line><path d="M4 10a8 4 0 0016 0"></path><line x1="7" y1="14" x2="7" y2="20"></line><line x1="17" y1="14" x2="17" y2="20"></line></svg></span>Churrasqueira a carvão + utensílios de churrasco</li>
+      <li><span class="li-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2"></rect><circle cx="12" cy="14" r="5"></circle><circle cx="12" cy="14" r="2"></circle><circle cx="7.5" cy="5.5" r="0.8" fill="currentColor" stroke="none"></circle><circle cx="10.5" cy="5.5" r="0.8" fill="currentColor" stroke="none"></circle></svg></span>Máquina de lavar e secar roupa</li>
+    </ul>
+    <a class="modal-map-link" href="https://www.airbnb.com.br/rooms/1661007944853819713" target="_blank" rel="noopener">Ver anúncio completo no Airbnb</a>
+  </div>
+</div>
+
+<div class="modal-overlay" id="vinicola-modal-overlay">
+  <div class="modal-box">
+    <button type="button" class="modal-close" id="vinicola-modal-close" aria-label="Fechar">&times;</button>
+    <h3>Instruções da vinícola</h3>
+    <p class="modal-schedule"><strong>Horários de sexta:</strong><br>
+      15h e 17h</p>
+    <p class="modal-price"><strong>Valores:</strong><br>
+      R$ 160 por pessoa — Visitação<br>
+      R$ 320 por pessoa — Tour com degustação</p>
+    <div class="modal-address-row">
+      <p class="modal-address" style="font-weight:400;">Estrada Julioca, Rodovia BR-040 — Km 38, área D, Areal/RJ</p>
+      <button type="button" class="copy-btn" data-copy="Estrada Julioca, Rodovia BR-040 - Km 38, área D, Areal/RJ" aria-label="Copiar endereço" title="Copiar endereço">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="12" height="12" rx="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+      </button>
+    </div>
+    <div class="modal-links-row">
+      <a class="modal-map-link" href="https://maps.google.com/?q=-22.222836,-43.110023" target="_blank" rel="noopener">Google Maps</a>
+      <a class="modal-map-link" href="https://www.waze.com/pt-BR/live-map/directions/br/rj/borgo-del-vino-areal?navigate=yes&to=place.ChIJW4AyL-dXmAARx1d9rdAfJTk" target="_blank" rel="noopener">Waze</a>
+    </div>
+  </div>
+</div>
 
 <section id="itinerary">
   <h2 class="section-title">Cardápio do Chefe Felipe + Roteiro</h2>
@@ -372,29 +680,39 @@
   <div class="shopping-link-wrap">
     <a class="shopping-link" href="lista-compras.html">Ver lista de compras</a>
   </div>
-  <p class="meals-note">Café da manhã e café da tarde caprichados (pão, presunto, muçarela, ovo, café, suco, refri e etc.)<br>Com direito a chimarrão e Café especial da <a href="https://www.instagram.com/43box.coffee/" target="_blank" rel="noopener" class="brand-link">43box</a>.</p>
+  <div class="breakfast-card">
+    <div class="breakfast-icon">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a4 4 0 010 8h-1"></path><path d="M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8z"></path><line x1="6" y1="1" x2="6" y2="4"></line><line x1="10" y1="1" x2="10" y2="4"></line><line x1="14" y1="1" x2="14" y2="4"></line></svg>
+    </div>
+    <div>
+      <h3>Café da manhã &amp; da tarde</h3>
+      <p>Pão, presunto, muçarela, ovo, café.</p>
+      <p>Com direito a chimarrão e café especial da <a href="https://www.instagram.com/43box.coffee/" target="_blank" rel="noopener" class="brand-link">43box</a>.</p>
+    </div>
+  </div>
   <div class="itinerary">
     <div class="day-card">
       <span class="tag">Quinta</span>
       <h3>Chegada da tropa</h3>
       <p><strong>Pré alinhado pra sair as 3:00 do dia 15 pra 16.</strong></p>
       <p>Curtir a casa, correr no mercado pra abastecer a geladeira.</p>
-      <p class="meal-line"><strong>Almoço:</strong> risoto com alguma carne (só não vem com contra filé, combinado?)</p>
-      <p class="meal-line"><strong>Janta:</strong> hambúrguer caseiro</p>
+      <p class="meal-line"><strong>Almoço:</strong> Risoto com alguma carne (só não vem com contra filé, combinado?)</p>
+      <p class="meal-line"><strong>Janta:</strong> Hambúrguer caseiro</p>
     </div>
     <div class="day-card">
       <span class="tag">Sexta</span>
       <h3>Dia do vinho</h3>
-      <p class="meal-line"><strong>Almoço:</strong> arroz com fraldinha</p>
+      <p class="meal-line"><strong>Almoço:</strong> Arroz com fraldinha</p>
       <p>De tarde, vinícola pra ficar filosófico.</p>
-      <p class="meal-line"><strong>Janta:</strong> pizza artesanal pra fechar com chave de ouro</p>
+      <button type="button" class="how-to-arrive-btn day-btn" id="vinicola-btn">Instruções da vinícola</button>
+      <p class="meal-line"><strong>Janta:</strong> Pizza artesanal pra fechar com chave de ouro</p>
     </div>
     <div class="day-card">
       <span class="tag">Sábado</span>
       <h3>Turistando</h3>
       <p>Passeio pela cidade.</p>
-      <p class="meal-line"><strong>Almoço:</strong> macarrão à bolonhesa</p>
-      <p class="meal-line"><strong>Janta:</strong> caldo de mandioca pra esquentar</p>
+      <p class="meal-line"><strong>Almoço:</strong> Macarrão à bolonhesa</p>
+      <p class="meal-line"><strong>Janta:</strong> Caldo de mandioca pra esquentar</p>
     </div>
     <div class="day-card">
       <span class="tag">Domingo</span>
@@ -485,6 +803,44 @@
 
   updateCountdown();
   setInterval(updateCountdown, 1000);
+
+  function wireModal(openBtnId, closeBtnId, overlayId) {
+    var overlay = document.getElementById(overlayId);
+    document.getElementById(openBtnId).addEventListener('click', function () {
+      overlay.classList.add('open');
+    });
+    document.getElementById(closeBtnId).addEventListener('click', function () {
+      overlay.classList.remove('open');
+    });
+    overlay.addEventListener('click', function (e) {
+      if (e.target === overlay) overlay.classList.remove('open');
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') overlay.classList.remove('open');
+    });
+  }
+
+  wireModal('how-to-arrive-btn', 'map-modal-close', 'map-modal-overlay');
+  wireModal('house-items-btn', 'house-items-modal-close', 'house-items-modal-overlay');
+  wireModal('vinicola-btn', 'vinicola-modal-close', 'vinicola-modal-overlay');
+
+  document.querySelectorAll('.copy-btn').forEach(function (btn) {
+    var originalSvg = btn.innerHTML;
+    var checkSvg = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>';
+    btn.addEventListener('click', function () {
+      var text = btn.getAttribute('data-copy');
+      navigator.clipboard.writeText(text).then(function () {
+        btn.innerHTML = checkSvg;
+        btn.classList.add('copied');
+        btn.title = 'Copiado!';
+        setTimeout(function () {
+          btn.innerHTML = originalSvg;
+          btn.classList.remove('copied');
+          btn.title = 'Copiar';
+        }, 1500);
+      });
+    });
+  });
 
   var weatherIcons = {
     0: '☀️', 1: '🌤️', 2: '⛅', 3: '☁️',
