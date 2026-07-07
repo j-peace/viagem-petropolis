@@ -531,6 +531,19 @@
     color: #fff;
   }
   .people .section-title { color: #fff; }
+  .people-photo-wrap {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 36px;
+  }
+  .people-photo-wrap img {
+    max-width: 380px;
+    width: 100%;
+    border-radius: 14px;
+    border: 3px solid var(--gold);
+    box-shadow: 0 12px 40px rgba(0,0,0,0.4), 0 0 0 6px rgba(255,255,255,0.05);
+    transform: rotate(-1.5deg);
+  }
   .people-row-label {
     text-align: center;
     text-transform: uppercase;
@@ -757,6 +770,9 @@
 <section class="people">
   <h2 class="section-title">Tropa da Multiplicação</h2>
   <div class="section-line"></div>
+  <div class="people-photo-wrap">
+    <img src="assets/img/tropa.png" alt="A Tropa da Multiplicação reunida">
+  </div>
   <p class="people-row-label">Quem manda</p>
   <div class="people-grid">
     <span>Larissa</span>
