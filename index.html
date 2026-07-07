@@ -130,8 +130,8 @@
   .how-to-arrive-wrap {
     margin-top: 20px;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
     gap: 12px;
   }
   .how-to-arrive-btn {
@@ -166,6 +166,12 @@
     margin: 10px 0;
     padding: 8px 18px;
     font-size: 0.85rem;
+  }
+  .how-to-arrive-btn.wine-btn {
+    background: #6d1b2b;
+  }
+  .how-to-arrive-btn.wine-btn:hover {
+    background: #8a2438;
   }
 
   .modal-overlay {
@@ -588,6 +594,11 @@
   }
 
   @media (max-width: 600px) {
+    .countdown {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
     section {
       padding: 40px 12px;
     }
@@ -630,8 +641,8 @@
     <div>
       <p>250m² (<strong>31,25m² por pessoa</strong>) de refúgio em Itaipava, todo em madeirão, com vista pra montanha e piscina de 45m² (<strong>5,6m² por pessoa</strong>) geladinha. Um resort particular só nosso mesmo.</p>
       <div class="how-to-arrive-wrap">
-        <button type="button" class="how-to-arrive-btn" id="how-to-arrive-btn">Como chegar</button>
         <button type="button" class="how-to-arrive-btn secondary-btn" id="house-items-btn">O que tem na casa</button>
+        <button type="button" class="how-to-arrive-btn" id="how-to-arrive-btn">Como chegar</button>
       </div>
     </div>
   </div>
@@ -725,17 +736,17 @@
     <div class="day-card">
       <span class="tag">Quinta</span>
       <h3>Chegada da tropa</h3>
-      <p><strong>Pré alinhado pra sair as 3:00 do dia 15 pra 16.</strong></p>
-      <p>Curtir a casa, correr no mercado pra abastecer a geladeira.</p>
-      <p class="meal-line"><strong>Almoço:</strong> Risoto com alguma carne (só não vem com contra filé, combinado?)</p>
+      <p><strong>Pré alinhado pra sair as 3:00.</strong></p>
+      <p>Curtir a casa, deixar os melhores fotógrafos de MG e RJ trabalharem e ir no mercado.</p>
+      <p class="meal-line"><strong>Almoço:</strong> Risoto com Alcatra que fica bom mas ninguém nunca fez</p>
       <p class="meal-line"><strong>Janta:</strong> Hambúrguer caseiro</p>
     </div>
     <div class="day-card">
       <span class="tag">Sexta</span>
       <h3>Dia do vinho</h3>
-      <p class="meal-line"><strong>Almoço:</strong> Arroz com fraldinha</p>
+      <p class="meal-line"><strong>Almoço:</strong> Fraldinha com arroz</p>
       <p>De tarde, vinícola pra ficar filosófico.</p>
-      <button type="button" class="how-to-arrive-btn day-btn" id="vinicola-btn">Instruções da vinícola</button>
+      <button type="button" class="how-to-arrive-btn day-btn wine-btn" id="vinicola-btn">Instruções da vinícola</button>
       <p class="meal-line"><strong>Janta:</strong> Pizza artesanal pra fechar com chave de ouro</p>
     </div>
     <div class="day-card">
@@ -743,12 +754,12 @@
       <h3>Turistando</h3>
       <p>Passeio pela cidade.</p>
       <p class="meal-line"><strong>Almoço:</strong> Macarrão à bolonhesa</p>
-      <p class="meal-line"><strong>Janta:</strong> Caldo de mandioca pra esquentar</p>
+      <p class="meal-line"><strong>Janta:</strong> Caldo de mandioca pra esquentar + vinho opcional</p>
     </div>
     <div class="day-card">
       <span class="tag">Domingo</span>
       <h3>Ressaca de saudade</h3>
-      <p>Café da manhã, malas na mão e todo mundo pra casa.</p>
+      <p>Café da manhã, almocinho na cidade e bem amigos... agora marcar a próxima.</p>
     </div>
     <div class="day-card brasil-card">
       <span class="tag">Extra adiado</span>
@@ -892,6 +903,12 @@
     return iconVal !== null ? iconVal : daily[field + '_best_match'][idx];
   }
 
+  function pickTemp(daily, field, idx) {
+    var iconVal = daily[field + '_icon_seamless'][idx];
+    if (iconVal !== null) return iconVal;
+    return daily[field + '_best_match'][idx] - 2;
+  }
+
   function fetchWeather() {
     var url = 'https://api.open-meteo.com/v1/forecast?latitude=-22.3833&longitude=-43.1333'
       + '&daily=weathercode,temperature_2m_max,temperature_2m_min,precipitation_probability_max'
@@ -906,8 +923,8 @@
           var card = document.querySelector('.weather-card[data-date="' + date + '"]');
           if (!card) return;
           var code = pick(data.daily, 'weathercode', idx);
-          var max = Math.round(pick(data.daily, 'temperature_2m_max', idx));
-          var min = Math.round(pick(data.daily, 'temperature_2m_min', idx));
+          var max = Math.round(pickTemp(data.daily, 'temperature_2m_max', idx));
+          var min = Math.round(pickTemp(data.daily, 'temperature_2m_min', idx));
           var rain = pick(data.daily, 'precipitation_probability_max', idx);
           card.querySelector('.wdate').outerHTML =
             '<div class="wicon">' + (weatherIcons[code] || '🌡️') + '</div>' +
