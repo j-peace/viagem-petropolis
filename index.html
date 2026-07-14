@@ -23,7 +23,7 @@
   .hero {
     position: relative;
     min-height: 100vh;
-    background: url('assets/img/capa.png') center/cover no-repeat;
+    background: url('assets/img/capa-quitandinha.jpg') center/cover no-repeat;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -463,49 +463,132 @@
     box-shadow: 0 8px 22px rgba(201,161,90,0.55);
   }
 
-  .weather-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 16px;
-  }
-  .weather-card {
+  .packing-card {
     background: #fff;
     border-radius: 10px;
-    padding: 20px 12px;
-    text-align: center;
+    padding: 26px 24px;
     box-shadow: 0 4px 14px rgba(0,0,0,0.06);
     border-top: 4px solid var(--gold);
   }
-  .weather-card .tag {
-    display: block;
-    font-size: 0.75rem;
-    color: var(--gold);
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    margin-bottom: 4px;
+  .packing-intro {
+    text-align: center;
+    color: var(--text);
+    max-width: 520px;
+    margin: 0 auto 20px;
   }
-  .weather-card .wdate {
-    font-size: 0.8rem;
-    color: #777;
-    margin-bottom: 10px;
+  .packing-status-label {
+    text-align: center;
+    font-size: 1.15rem;
+    color: var(--green-dark);
+    font-weight: 700;
+    margin-bottom: 16px;
   }
-  .weather-card .wicon {
-    font-size: 2.4rem;
-    margin-bottom: 8px;
+  .packing-status {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+    max-width: 320px;
+    margin: 0 auto 10px;
   }
-  .weather-card .wtemp {
-    font-size: 1.1rem;
-    font-weight: bold;
+  .packing-btn {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 9px;
+    background: transparent;
+    color: var(--green-dark);
+    border: 1px solid var(--green-dark);
+    padding: 15px 26px;
+    border-radius: 999px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+  }
+  .packing-btn:hover { background: var(--cream); }
+  .packing-btn.active {
+    background: var(--green-dark);
+    color: #fff;
+  }
+  .packing-btn svg { width: 19px; height: 19px; flex-shrink: 0; }
+  .packing-status-msg {
+    text-align: center;
+    font-size: 0.85rem;
+    color: #767676;
+    font-style: italic;
+    margin-bottom: 22px;
+  }
+  .packing-list {
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+    max-width: 460px;
+    margin: 0 auto;
+  }
+  .packing-list li {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.9rem;
+    color: var(--text);
+  }
+  .packing-icon {
+    flex-shrink: 0;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     color: var(--green-dark);
   }
-  .weather-card .wtemp .min {
-    color: #888;
-    font-weight: normal;
+  .packing-icon svg { width: 17px; height: 17px; }
+  .packing-tag {
+    color: var(--text);
+    font-size: 0.9rem;
   }
-  .weather-card .wrain {
-    margin-top: 6px;
-    font-size: 0.85rem;
-    color: #3a6ea5;
+  .packing-extra-item {
+    grid-column: 1 / -1;
+    flex-wrap: wrap;
+  }
+  .packing-extra-input {
+    flex: 1;
+    min-width: 0;
+    padding: 4px 0;
+    border: none;
+    border-bottom: 1px solid #ddd;
+    background: transparent;
+    font-size: 0.9rem;
+    font-family: inherit;
+    color: var(--text);
+  }
+  .packing-extra-input:focus {
+    outline: none;
+    border-bottom-color: var(--gold);
+  }
+  .packing-extra-send {
+    flex-shrink: 0;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background: none;
+    color: var(--green-dark);
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    opacity: 0.6;
+    transition: opacity 0.2s, color 0.2s;
+  }
+  .packing-extra-send:hover { opacity: 1; color: var(--gold); }
+  .packing-extra-send svg { width: 15px; height: 15px; }
+  .packing-extra-feedback {
+    flex-basis: 100%;
+    margin-left: 28px;
+    font-size: 0.78rem;
+    color: #767676;
   }
   .weather-note {
     text-align: center;
@@ -532,8 +615,84 @@
   .google-check-link:hover {
     background: var(--cream);
   }
+
+  .wchart-card {
+    position: relative;
+    background: #fff;
+    border-radius: 10px;
+    padding: 20px 16px 14px;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.06);
+    border-top: 4px solid var(--gold);
+    margin-top: 18px;
+  }
+  .wchart-title {
+    font-size: 0.78rem;
+    color: var(--gold);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-align: center;
+    margin-bottom: 18px;
+  }
+  .wchart-rain-corner {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    font-size: 0.68rem;
+    color: #767676;
+    white-space: nowrap;
+  }
+  .wchart-plot {
+    position: relative;
+    height: 230px;
+    margin: 0 4px 8px;
+  }
+  .wchart-svg { width: 100%; height: 100%; display: block; overflow: visible; }
+  .wchart-area { fill: url(#wchartAreaGrad); stroke: none; }
+  .wchart-line-max {
+    fill: none; stroke: #b8730a; stroke-width: 2px;
+    vector-effect: non-scaling-stroke; stroke-linecap: round; stroke-linejoin: round;
+  }
+  .wchart-line-min {
+    fill: none; stroke: #2f5f91; stroke-width: 2px;
+    vector-effect: non-scaling-stroke; stroke-linecap: round; stroke-linejoin: round;
+  }
+  .wchart-points { position: absolute; inset: 0; }
+  .wchart-dot {
+    position: absolute;
+    width: 9px; height: 9px;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 0 2px #fff;
+  }
+  .wchart-dot-max { background: #b8730a; }
+  .wchart-dot-min { background: #2f5f91; }
+  .wchart-icon {
+    position: absolute;
+    font-size: 1.3rem;
+    line-height: 1;
+    transform: translate(-50%, calc(-100% - 30px));
+  }
+  .wchart-val {
+    position: absolute;
+    font-size: 0.74rem;
+    font-weight: 700;
+    white-space: nowrap;
+  }
+  .wchart-val-max { color: var(--text); transform: translate(-50%, calc(-100% - 8px)); }
+  .wchart-val-min { color: #767676; font-weight: 600; transform: translate(-50%, 8px); }
+  .wchart-xaxis {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .wchart-xcol { text-align: center; }
+  .wchart-xday { font-size: 0.75rem; color: var(--text); font-weight: 600; }
+  .wchart-xdate { font-size: 0.65rem; color: #999; }
   @media (max-width: 700px) {
-    .weather-grid { grid-template-columns: 1fr 1fr; }
+    .wchart-plot { height: 200px; }
+    .wchart-xday { font-size: 0.68rem; }
+    .wchart-xdate { font-size: 0.58rem; }
+    .wchart-val { font-size: 0.65rem; }
+    .wchart-icon { font-size: 1.05rem; transform: translate(-50%, calc(-100% - 26px)); }
   }
 
   .people {
@@ -633,18 +792,54 @@
   </div>
 </section>
 
-<section id="stay">
-  <h2 class="section-title">O pouso da tropa</h2>
+<section id="packing">
+  <h2 class="section-title">Bora montar a mala?</h2>
   <div class="section-line"></div>
-  <div class="stay">
-    <img src="assets/img/foto2.png" alt="Casa em Itaipava">
-    <div>
-      <p>250m² (<strong>31,25m² por pessoa</strong>) de refúgio em Itaipava, todo em madeirão, com vista pra montanha e piscina de 45m² (<strong>5,6m² por pessoa</strong>) geladinha. Um resort particular só nosso mesmo.</p>
-      <div class="how-to-arrive-wrap">
-        <button type="button" class="how-to-arrive-btn secondary-btn" id="house-items-btn">O que tem na casa</button>
-        <button type="button" class="how-to-arrive-btn" id="how-to-arrive-btn">Como chegar</button>
-      </div>
+  <div class="packing-card">
+    <p class="packing-status-label">Como está sua mala?</p>
+    <div class="packing-status" id="packing-status">
+      <button type="button" class="packing-btn" data-status="done"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="16 8 10 14 8 12"></polyline></svg> Pronta</button>
+      <button type="button" class="packing-btn" data-status="not-yet"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg> Ainda não</button>
+      <button type="button" class="packing-btn" data-status="last-minute"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c4 0 7-3 7-7 0-4-3-6-4-9-1 2-2 3-2 5 0-2-1-4-3-6-1 4-5 6-5 10 0 4 3 7 7 7z"></path></svg> Vou deixar pro dia</button>
     </div>
+    <p class="packing-status-msg" id="packing-status-msg">&nbsp;</p>
+    <ul class="packing-list">
+      <li><span class="packing-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a2 2 0 012 2 2 2 0 01-2 2 2 2 0 012 2c0 .6-.4 1-1 1H4l8 5 8-5h-7c-.6 0-1-.4-1-1a2 2 0 012-2 2 2 0 00-2-2z"></path></svg></span>Casaco (esfria à noite)</li>
+      <li><span class="packing-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 15c2 1.4 4 1.4 6 0s4-1.4 6 0 4 1.4 6 0"></path><path d="M2 19c2 1.4 4 1.4 6 0s4-1.4 6 0 4 1.4 6 0"></path></svg></span>Roupa de banho (pros corajosos)</li>
+      <li><span class="packing-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="8.5" cy="6.5" rx="2.3" ry="3"></ellipse><circle cx="8.5" cy="11" r="0.9" fill="currentColor" stroke="none"></circle><ellipse cx="15.5" cy="14.5" rx="2.3" ry="3"></ellipse><circle cx="15.5" cy="19" r="0.9" fill="currentColor" stroke="none"></circle></svg></span>Tênis confortável</li>
+      <li><span class="packing-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg></span>Protetor solar (sim, mesmo no frio)</li>
+      <li><span class="packing-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 14.76V3.5a2.5 2.5 0 00-5 0v11.26a4.5 4.5 0 105 0z"></path></svg></span>Meia quentinha</li>
+      <li><span class="packing-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 2v4"></path><path d="M15 2v4"></path><path d="M6 10h12v3a6 6 0 01-12 0v-3z"></path><path d="M12 19v3"></path></svg></span>Carregador</li>
+      <li><span class="packing-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"></path><circle cx="6" cy="18" r="3"></circle><circle cx="18" cy="16" r="3"></circle></svg></span>Violão</li>
+      <li><span class="packing-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 13l2-5a2 2 0 012-1h10a2 2 0 012 1l2 5"></path><rect x="1" y="13" width="22" height="6" rx="1"></rect><circle cx="6.5" cy="19" r="1.5"></circle><circle cx="17.5" cy="19" r="1.5"></circle></svg></span><span class="packing-tag">Tag: Sem Parar (a mais esquecida de todas)</span></li>
+      <li class="packing-extra-item">
+        <span class="packing-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></span>
+        <input type="text" id="packing-extra-input" class="packing-extra-input" placeholder="O que mais você vai levar?" maxlength="120">
+        <button type="button" id="packing-extra-btn" class="packing-extra-send" aria-label="Enviar" title="Enviar">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+        </button>
+        <span class="packing-extra-feedback" id="packing-extra-feedback"></span>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<section id="weather">
+  <h2 class="section-title">Previsão do tempo</h2>
+  <div class="section-line"></div>
+  <div class="wchart-card" id="weather-chart-card" style="display:none;">
+    <p class="wchart-title">Faixa de temperatura por dia</p>
+    <span class="wchart-rain-corner" id="wchart-rain-corner"></span>
+    <div class="wchart-plot">
+      <svg class="wchart-svg" id="wchart-svg" viewBox="0 0 100 100" preserveAspectRatio="none"></svg>
+      <div class="wchart-points" id="wchart-points"></div>
+    </div>
+    <div class="wchart-xaxis" id="wchart-xaxis"></div>
+  </div>
+
+  <p class="weather-note"><span id="weather-note-text">Usa a api gratuita open meteo. Perto da data fica mais confiável.</span></p>
+  <div class="google-check-wrap">
+    <a class="google-check-link" href="https://www.google.com/search?q=previs%C3%A3o+do+tempo+itaipava+rj" target="_blank" rel="noopener">Double check acesse o Google aqui</a>
   </div>
 </section>
 
@@ -694,28 +889,6 @@
   </div>
 </div>
 
-<div class="modal-overlay" id="vinicola-modal-overlay">
-  <div class="modal-box">
-    <button type="button" class="modal-close" id="vinicola-modal-close" aria-label="Fechar">&times;</button>
-    <h3>Instruções da vinícola</h3>
-    <p class="modal-schedule"><strong>Horários de sexta:</strong><br>
-      15h e 17h</p>
-    <p class="modal-price"><strong>Valores:</strong><br>
-      R$ 160 por pessoa — Visitação<br>
-      R$ 320 por pessoa — Tour com degustação</p>
-    <div class="modal-address-row">
-      <p class="modal-address" style="font-weight:400;">Estrada Julioca, Rodovia BR-040 — Km 38, área D, Areal/RJ</p>
-      <button type="button" class="copy-btn" data-copy="Estrada Julioca, Rodovia BR-040 - Km 38, área D, Areal/RJ" aria-label="Copiar endereço" title="Copiar endereço">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="12" height="12" rx="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-      </button>
-    </div>
-    <div class="modal-links-row">
-      <a class="modal-map-link" href="https://maps.google.com/?q=-22.222836,-43.110023" target="_blank" rel="noopener">Google Maps</a>
-      <a class="modal-map-link" href="https://www.waze.com/pt-BR/live-map/directions/br/rj/borgo-del-vino-areal?navigate=yes&to=place.ChIJW4AyL-dXmAARx1d9rdAfJTk" target="_blank" rel="noopener">Waze</a>
-    </div>
-  </div>
-</div>
-
 <section id="itinerary">
   <h2 class="section-title">Cardápio do Chefe Felipe + Roteiro</h2>
   <div class="section-line"></div>
@@ -745,8 +918,6 @@
       <span class="tag">Sexta</span>
       <h3>Dia do vinho</h3>
       <p class="meal-line"><strong>Almoço:</strong> Fraldinha com arroz</p>
-      <p>De tarde, vinícola pra ficar filosófico.</p>
-      <button type="button" class="how-to-arrive-btn day-btn wine-btn" id="vinicola-btn">Instruções da vinícola</button>
       <p class="meal-line"><strong>Janta:</strong> Pizza artesanal pra fechar com chave de ouro</p>
     </div>
     <div class="day-card">
@@ -754,6 +925,7 @@
       <h3>Turistando</h3>
       <p>Passeio pela cidade.</p>
       <p class="meal-line"><strong>Almoço:</strong> Macarrão à bolonhesa</p>
+      <p class="meal-line"><strong>Fim de tarde:</strong> Harmonização com vinhos 🤫</p>
       <p class="meal-line"><strong>Janta:</strong> Caldo de mandioca pra esquentar + vinho opcional</p>
     </div>
     <div class="day-card">
@@ -769,30 +941,18 @@
   </div>
 </section>
 
-<section id="weather">
-  <h2 class="section-title">Previsão do tempo</h2>
+<section id="stay">
+  <h2 class="section-title">O pouso da tropa</h2>
   <div class="section-line"></div>
-  <div class="weather-grid" id="weather-grid">
-    <div class="weather-card" data-date="2026-07-16">
-      <span class="tag">Quinta 16/07</span>
-      <div class="wdate">carregando...</div>
+  <div class="stay">
+    <img src="assets/img/foto2.png" alt="Casa em Itaipava">
+    <div>
+      <p>250m² (<strong>31,25m² por pessoa</strong>) de refúgio em Itaipava, todo em madeirão, com vista pra montanha e piscina de 45m² (<strong>5,6m² por pessoa</strong>) geladinha. Um resort particular só nosso mesmo.</p>
+      <div class="how-to-arrive-wrap">
+        <button type="button" class="how-to-arrive-btn secondary-btn" id="house-items-btn">O que tem na casa</button>
+        <button type="button" class="how-to-arrive-btn" id="how-to-arrive-btn">Como chegar</button>
+      </div>
     </div>
-    <div class="weather-card" data-date="2026-07-17">
-      <span class="tag">Sexta 17/07</span>
-      <div class="wdate">carregando...</div>
-    </div>
-    <div class="weather-card" data-date="2026-07-18">
-      <span class="tag">Sábado 18/07</span>
-      <div class="wdate">carregando...</div>
-    </div>
-    <div class="weather-card" data-date="2026-07-19">
-      <span class="tag">Domingo 19/07</span>
-      <div class="wdate">carregando...</div>
-    </div>
-  </div>
-  <p class="weather-note"><span id="weather-note-text">Usa a api gratuita open meteo. Perto da data fica mais confiável.</span></p>
-  <div class="google-check-wrap">
-    <a class="google-check-link" href="https://www.google.com/search?q=previs%C3%A3o+do+tempo+itaipava+rj" target="_blank" rel="noopener">Double check acesse o Google aqui</a>
   </div>
 </section>
 
@@ -867,7 +1027,61 @@
 
   wireModal('how-to-arrive-btn', 'map-modal-close', 'map-modal-overlay');
   wireModal('house-items-btn', 'house-items-modal-close', 'house-items-modal-overlay');
-  wireModal('vinicola-btn', 'vinicola-modal-close', 'vinicola-modal-overlay');
+
+  (function () {
+    var STORAGE_KEY = 'petropolis-packing-status';
+    var messages = {
+      done: 'Boa! Já tá on point 💪',
+      'not-yet': 'Relaxa, ainda dá tempo — mas não deixa pra última hora 👀',
+      'last-minute': 'Cara raiz. Só não esquece o celular 🙃'
+    };
+    var buttons = document.querySelectorAll('.packing-btn');
+    var msgEl = document.getElementById('packing-status-msg');
+
+    function applyStatus(status) {
+      buttons.forEach(function (b) {
+        b.classList.toggle('active', b.getAttribute('data-status') === status);
+      });
+      msgEl.textContent = messages[status] || ' ';
+    }
+
+    var saved = localStorage.getItem(STORAGE_KEY);
+    if (saved) applyStatus(saved);
+
+    buttons.forEach(function (b) {
+      b.addEventListener('click', function () {
+        var status = b.getAttribute('data-status');
+        localStorage.setItem(STORAGE_KEY, status);
+        applyStatus(status);
+      });
+    });
+  })();
+
+  (function () {
+    var input = document.getElementById('packing-extra-input');
+    var btn = document.getElementById('packing-extra-btn');
+    var feedback = document.getElementById('packing-extra-feedback');
+    var approvals = [
+      '🎒 Aprovado! Cabe numa boa.',
+      '✅ Vai de boa, cabe tranquilo.',
+      '🧳 Mala aprovou, pode trazer.',
+      '😄 Cabe sim, só não esquece de arrumar direito.'
+    ];
+    function sendExtra() {
+      var item = input.value.trim();
+      if (!item) {
+        feedback.textContent = 'Escreve alguma coisa primeiro 🙂';
+        return;
+      }
+      feedback.textContent = approvals[Math.floor(Math.random() * approvals.length)];
+      input.value = '';
+    }
+
+    btn.addEventListener('click', sendExtra);
+    input.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter') sendExtra();
+    });
+  })();
 
   document.querySelectorAll('.copy-btn').forEach(function (btn) {
     var originalSvg = btn.innerHTML;
@@ -909,6 +1123,86 @@
     return daily[field + '_best_match'][idx] - 2;
   }
 
+  function smoothCurve(pts) {
+    var d = '';
+    for (var i = 0; i < pts.length - 1; i++) {
+      var p0 = pts[i - 1] || pts[i];
+      var p1 = pts[i];
+      var p2 = pts[i + 1];
+      var p3 = pts[i + 2] || p2;
+      var c1x = p1[0] + (p2[0] - p0[0]) / 6;
+      var c1y = p1[1] + (p2[1] - p0[1]) / 6;
+      var c2x = p2[0] - (p3[0] - p1[0]) / 6;
+      var c2y = p2[1] - (p3[1] - p1[1]) / 6;
+      d += ' C ' + c1x.toFixed(2) + ',' + c1y.toFixed(2) + ' ' + c2x.toFixed(2) + ',' + c2y.toFixed(2) + ' ' + p2[0] + ',' + p2[1];
+    }
+    return d;
+  }
+
+  function renderWeatherChart(rows) {
+    var mins = rows.map(function (r) { return r.min; });
+    var maxs = rows.map(function (r) { return r.max; });
+    var lo = Math.floor(Math.min.apply(null, mins) / 5) * 5;
+    var hi = Math.max(Math.ceil(Math.max.apply(null, maxs) / 5) * 5, lo + 5);
+    var span = hi - lo;
+    var padTop = 30, padBottom = 18;
+    var plotH = 100 - padTop - padBottom;
+
+    function yFor(v) { return padTop + (hi - v) / span * plotH; }
+    function xFor(i) { return (i + 0.5) / rows.length * 100; }
+
+    var maxPts = rows.map(function (r, i) { return [xFor(i), yFor(r.max)]; });
+    var minPts = rows.map(function (r, i) { return [xFor(i), yFor(r.min)]; });
+    var minPtsRev = minPts.slice().reverse();
+
+    var maxPath = 'M ' + maxPts[0][0] + ',' + maxPts[0][1] + smoothCurve(maxPts);
+    var minPath = 'M ' + minPts[0][0] + ',' + minPts[0][1] + smoothCurve(minPts);
+    var areaPath = 'M ' + maxPts[0][0] + ',' + maxPts[0][1] + smoothCurve(maxPts) +
+      ' L ' + minPtsRev[0][0] + ',' + minPtsRev[0][1] + smoothCurve(minPtsRev) + ' Z';
+
+    document.getElementById('wchart-svg').innerHTML =
+      '<defs><linearGradient id="wchartAreaGrad" x1="0" y1="0" x2="0" y2="1">' +
+        '<stop offset="0%" stop-color="#f2c14e" stop-opacity="0.35"></stop>' +
+        '<stop offset="55%" stop-color="#c9a15a" stop-opacity="0.12"></stop>' +
+        '<stop offset="100%" stop-color="#3a6ea5" stop-opacity="0.18"></stop>' +
+      '</linearGradient></defs>' +
+      '<path class="wchart-area" d="' + areaPath + '"></path>' +
+      '<path class="wchart-line-max" d="' + maxPath + '"></path>' +
+      '<path class="wchart-line-min" d="' + minPath + '"></path>';
+
+    var rains = rows.map(function (r) { return r.rain; });
+    var rainLo = Math.min.apply(null, rains), rainHi = Math.max.apply(null, rains);
+    document.getElementById('wchart-rain-corner').textContent =
+      '💧 ' + (rainLo === rainHi ? rainLo + '%' : rainLo + '–' + rainHi + '%');
+
+    document.getElementById('wchart-points').innerHTML = rows.map(function (r, i) {
+      var x = xFor(i);
+      var yMax = yFor(r.max);
+      var yMin = yFor(r.min);
+      return '' +
+        '<div class="wchart-icon" style="left:' + x + '%; top:' + yMax + '%">' + r.icon + '</div>' +
+        '<div class="wchart-dot wchart-dot-max" style="left:' + x + '%; top:' + yMax + '%"></div>' +
+        '<div class="wchart-val wchart-val-max" style="left:' + x + '%; top:' + yMax + '%">' + r.max + '°</div>' +
+        '<div class="wchart-dot wchart-dot-min" style="left:' + x + '%; top:' + yMin + '%"></div>' +
+        '<div class="wchart-val wchart-val-min" style="left:' + x + '%; top:' + yMin + '%">' + r.min + '°</div>';
+    }).join('');
+
+    document.getElementById('wchart-xaxis').innerHTML = rows.map(function (r) {
+      var d = new Date(r.date + 'T12:00:00');
+      var wd = d.toLocaleDateString('pt-BR', { weekday: 'short' }).replace('.', '');
+      wd = wd.charAt(0).toUpperCase() + wd.slice(1);
+      var dm = d.toLocaleDateString('pt-BR', { day: '2-digit', month: '2-digit' });
+      var tip = wd + ' ' + dm + ': mínima ' + r.min + '°, máxima ' + r.max + '°, ' + r.rain + '% de chance de chuva';
+      return '' +
+        '<div class="wchart-xcol" title="' + tip + '">' +
+          '<div class="wchart-xday">' + wd + '</div>' +
+          '<div class="wchart-xdate">' + dm + '</div>' +
+        '</div>';
+    }).join('');
+
+    document.getElementById('weather-chart-card').style.display = 'block';
+  }
+
   function fetchWeather() {
     var url = 'https://api.open-meteo.com/v1/forecast?latitude=-22.3833&longitude=-43.1333'
       + '&daily=weathercode,temperature_2m_max,temperature_2m_min,precipitation_probability_max'
@@ -919,25 +1213,19 @@
       .then(function (res) { return res.json(); })
       .then(function (data) {
         if (!data.daily || !data.daily.time) throw new Error('sem dados');
+        var chartRows = [];
         data.daily.time.forEach(function (date, idx) {
-          var card = document.querySelector('.weather-card[data-date="' + date + '"]');
-          if (!card) return;
           var code = pick(data.daily, 'weathercode', idx);
           var max = Math.round(pickTemp(data.daily, 'temperature_2m_max', idx));
           var min = Math.round(pickTemp(data.daily, 'temperature_2m_min', idx));
           var rain = pick(data.daily, 'precipitation_probability_max', idx);
-          card.querySelector('.wdate').outerHTML =
-            '<div class="wicon">' + (weatherIcons[code] || '🌡️') + '</div>' +
-            '<div class="wtemp">' + max + '° <span class="min">' + min + '°</span></div>' +
-            '<div class="wrain">' + rain + '% de chuva</div>';
+          chartRows.push({ date: date, min: min, max: max, rain: rain, icon: weatherIcons[code] || '🌡️' });
         });
+        if (chartRows.length) renderWeatherChart(chartRows);
       })
       .catch(function () {
         document.getElementById('weather-note-text').textContent =
           'Previsão ainda não disponível pra essas datas — a Open-Meteo só prevê com ~16 dias de antecedência. Volte mais perto da viagem!';
-        document.querySelectorAll('.weather-card .wdate').forEach(function (el) {
-          el.textContent = '—';
-        });
       });
   }
 
