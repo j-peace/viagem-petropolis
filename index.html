@@ -23,7 +23,7 @@
   .hero {
     position: relative;
     min-height: 100vh;
-    background: url('assets/img/capa-quitandinha.jpg') center/cover no-repeat;
+    background: url('assets/img/capa-catedral.jpg') center/cover no-repeat;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -72,29 +72,62 @@
     flex-wrap: wrap;
   }
   .countdown .unit {
-    background: rgba(255,255,255,0.12);
-    border: 1px solid rgba(255,255,255,0.35);
+    background: rgba(15,20,15,0.55);
+    border: 1px solid rgba(249,208,120,0.75);
     backdrop-filter: blur(4px);
     border-radius: 12px;
-    padding: 18px 20px;
-    min-width: 84px;
+    padding: 18px 22px;
+    min-width: 90px;
+    box-shadow: 0 0 0 rgba(249,208,120,0.5);
+    animation: countdown-glow 1.8s ease-in-out infinite;
+  }
+  .countdown .unit:nth-child(2) { animation-delay: 0.15s; }
+  .countdown .unit:nth-child(3) { animation-delay: 0.3s; }
+  .countdown .unit:nth-child(4) { animation-delay: 0.45s; }
+  @keyframes countdown-glow {
+    0%, 100% { box-shadow: 0 0 0 rgba(249,208,120,0.45); transform: scale(1); }
+    50% { box-shadow: 0 0 24px rgba(249,208,120,0.85); transform: scale(1.04); }
   }
   .countdown .unit .num {
-    font-size: clamp(1.8rem, 4vw, 2.6rem);
-    font-weight: bold;
-    color: var(--gold);
+    font-size: clamp(2.2rem, 5.5vw, 3.4rem);
+    font-weight: 800;
+    color: #ffd876;
     font-variant-numeric: tabular-nums;
+    text-shadow: 0 0 14px rgba(249,208,120,0.9);
   }
   .countdown .unit .label {
-    font-size: 0.75rem;
+    font-size: 0.78rem;
+    font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 1px;
+    letter-spacing: 1.5px;
     margin-top: 4px;
+    color: #fff;
+  }
+  .countdown-hype {
+    font-size: clamp(1.1rem, 3vw, 1.4rem);
+    font-weight: 700;
+    color: #ffd876;
+    text-shadow: 0 2px 12px rgba(0,0,0,0.5);
+    margin-bottom: 18px;
+    letter-spacing: 0.3px;
   }
   .countdown-done {
     font-size: 1.6rem;
     color: var(--gold);
     display: none;
+  }
+  .countdown-almost {
+    margin-top: 20px;
+    font-size: clamp(1.1rem, 3.2vw, 1.5rem);
+    font-weight: 800;
+    color: #ffd876;
+    text-shadow: 0 2px 12px rgba(0,0,0,0.5);
+    letter-spacing: 0.3px;
+    animation: countdown-bounce 1.2s ease-in-out infinite;
+  }
+  @keyframes countdown-bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-6px); }
   }
 
   section {
@@ -780,14 +813,17 @@
   <div class="hero-content">
     <div class="eyebrow">16 a 19 de julho · bora ou bora?</div>
     <h1>Tá chegando a viagem pra Petrópolis</h1>
-    <p class="sub">Itaipava te espera: montanha, comida boa e a zoeira de sempre</p>
+    
+    
 
+    <p class="countdown-hype" id="countdown-hype">Faltam só algumas horas.  Ta quaseee vem 3 horas da manha!</p>
     <div class="countdown" id="countdown">
       <div class="unit"><div class="num" id="days">00</div><div class="label">dias</div></div>
       <div class="unit"><div class="num" id="hours">00</div><div class="label">horas</div></div>
       <div class="unit"><div class="num" id="minutes">00</div><div class="label">min</div></div>
       <div class="unit"><div class="num" id="seconds">00</div><div class="label">seg</div></div>
     </div>
+    <p class="countdown-almost" id="countdown-almost">Tá quaseeee! 🎉</p>
     <div class="countdown-done" id="countdown-done">BORA! A viagem já começou</div>
   </div>
 </section>
@@ -811,7 +847,7 @@
       <li><span class="packing-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 14.76V3.5a2.5 2.5 0 00-5 0v11.26a4.5 4.5 0 105 0z"></path></svg></span>Meia quentinha</li>
       <li><span class="packing-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 2v4"></path><path d="M15 2v4"></path><path d="M6 10h12v3a6 6 0 01-12 0v-3z"></path><path d="M12 19v3"></path></svg></span>Carregador</li>
       <li><span class="packing-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"></path><circle cx="6" cy="18" r="3"></circle><circle cx="18" cy="16" r="3"></circle></svg></span>Violão</li>
-      <li><span class="packing-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 13l2-5a2 2 0 012-1h10a2 2 0 012 1l2 5"></path><rect x="1" y="13" width="22" height="6" rx="1"></rect><circle cx="6.5" cy="19" r="1.5"></circle><circle cx="17.5" cy="19" r="1.5"></circle></svg></span><span class="packing-tag">Tag: Sem Parar (a mais esquecida de todas)</span></li>
+      <li><span class="packing-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 13l2-5a2 2 0 012-1h10a2 2 0 012 1l2 5"></path><rect x="1" y="13" width="22" height="6" rx="1"></rect><circle cx="6.5" cy="19" r="1.5"></circle><circle cx="17.5" cy="19" r="1.5"></circle></svg></span><span class="packing-tag">Tag: Sem Parar obrigatória!</span></li>
       <li class="packing-extra-item">
         <span class="packing-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></span>
         <input type="text" id="packing-extra-input" class="packing-extra-input" placeholder="O que mais você vai levar?" maxlength="120">
@@ -957,10 +993,10 @@
 </section>
 
 <section class="people">
-  <h2 class="section-title">Tropa da Multiplicação</h2>
+  <h2 class="section-title">Bora ou bora?</h2>
   <div class="section-line"></div>
   <div class="people-photo-wrap">
-    <img src="assets/img/tropa.png" alt="A Tropa da Multiplicação reunida">
+    <img src="assets/img/tropa.png" alt="A Tropa reunida">
   </div>
   <p class="people-row-label">Quem manda</p>
   <div class="people-grid">
@@ -991,6 +1027,8 @@
 
     if (diff <= 0) {
       document.getElementById('countdown').style.display = 'none';
+      document.getElementById('countdown-hype').style.display = 'none';
+      document.getElementById('countdown-almost').style.display = 'none';
       document.getElementById('countdown-done').style.display = 'block';
       return;
     }
