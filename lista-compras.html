@@ -105,6 +105,17 @@
     margin-top: 4px;
     padding-left: 27px;
   }
+  .card.cancelled {
+    opacity: 0.75;
+  }
+  .card.cancelled h2 {
+    text-decoration: line-through;
+    color: #999;
+  }
+  .card.cancelled li label {
+    text-decoration: line-through;
+    color: #999;
+  }
   footer {
     text-align: center;
     padding: 32px;
@@ -126,16 +137,16 @@
   <div class="card base">
     <h2>Base — itens usados em vários pratos</h2>
     <ul>
-      <li><input type="checkbox" id="i0"><label for="i0">Cebola — 7 unidades (5 bolonhesa + 2 hambúrguer)</label></li>
+      <li><input type="checkbox" id="i0"><label for="i0">Cebola — 5 unidades (bolonhesa)</label></li>
       <li><input type="checkbox" id="i1"><label for="i1">Alho — 3 cabeças (bolonhesa)</label></li>
       <li><input type="checkbox" id="i2"><label for="i2">Azeite — 1 pequeno (bolonhesa)</label></li>
       <li><input type="checkbox" id="i3"><label for="i3">Sal</label></li>
       <li><input type="checkbox" id="i4"><label for="i4">Pimenta-do-reino</label></li>
       <li><input type="checkbox" id="i5"><label for="i5">Orégano</label></li>
-      <li><input type="checkbox" id="i6"><label for="i6">Muçarela — 800g (café) + 16 fatias (hambúrguer) + meio quilo (pizza)</label></li>
-      <li><input type="checkbox" id="i7"><label for="i7">Presunto — 800g (café) + um pouco menos que a muçarela (hambúrguer)</label></li>
-      <li><input type="checkbox" id="i8"><label for="i8">Tomate — quantidade boa (hambúrguer/pizza) + 2 tomatinhos (marguerita)</label></li>
-      <li><input type="checkbox" id="i9"><label for="i9">Bacon — a gosto do Fillipe (hambúrguer) + meio kg (caldo de mandioca)</label></li>
+      <li><input type="checkbox" id="i6"><label for="i6">Muçarela — 800g (café) + meio quilo (pizza)</label></li>
+      <li><input type="checkbox" id="i7"><label for="i7">Presunto — 800g (café)</label></li>
+      <li><input type="checkbox" id="i8"><label for="i8">Tomate — quantidade boa (pizza) + 2 tomatinhos (marguerita)</label></li>
+      <li><input type="checkbox" id="i9"><label for="i9">Bacon — meio kg (caldo de mandioca)</label></li>
       <li><input type="checkbox" id="i10"><label for="i10">Cheiro-verde/cebolinha — 2 maços (fraldinha + caldo)</label></li>
     </ul>
   </div>
@@ -161,17 +172,25 @@
     <p class="note">Cebola, alho, azeite, sal, pimenta, orégano: está na base</p>
   </div>
 
-  <div class="card">
-    <h2>Hambúrguer caseiro</h2>
+  <div class="card cancelled">
+    <h2>Hambúrguer caseiro (cancelado)</h2>
     <ul>
-      <li><input type="checkbox" id="i18"><label for="i18">Carne moída — 2 kg</label></li>
-      <li><input type="checkbox" id="i19"><label for="i19">Pão de hambúrguer — 2 pacotes de 10 unidades</label></li>
-      <li><input type="checkbox" id="i20"><label for="i20">Alface — 2 pés</label></li>
-      <li><input type="checkbox" id="i21"><label for="i21">Maionese — 1 pote</label></li>
-      <li><input type="checkbox" id="i22"><label for="i22">Ketchup — 1 frasco</label></li>
-      <li><input type="checkbox" id="i23"><label for="i23">Batata congelada — 2 kg</label></li>
+      <li><input type="checkbox" id="i18" disabled><label for="i18">Carne moída — 2 kg</label></li>
+      <li><input type="checkbox" id="i19" disabled><label for="i19">Pão de hambúrguer — 2 pacotes de 10 unidades</label></li>
+      <li><input type="checkbox" id="i20" disabled><label for="i20">Alface — 2 pés</label></li>
+      <li><input type="checkbox" id="i21" disabled><label for="i21">Maionese — 1 pote</label></li>
+      <li><input type="checkbox" id="i22" disabled><label for="i22">Ketchup — 1 frasco</label></li>
+      <li><input type="checkbox" id="i23" disabled><label for="i23">Batata congelada — 2 kg</label></li>
     </ul>
-    <p class="note">Cebola, muçarela, presunto, tomate, bacon: está na base</p>
+  </div>
+
+  <div class="card">
+    <h2>Churrasco</h2>
+    <ul>
+      <li><input type="checkbox" id="i44"><label for="i44">Carne bovina — 2,5 kg</label></li>
+      <li><input type="checkbox" id="i45"><label for="i45">Carne suína — 1 kg</label></li>
+      <li><input type="checkbox" id="i46"><label for="i46">1 kg entre linguiça e coração</label></li>
+    </ul>
   </div>
 
   <div class="card">

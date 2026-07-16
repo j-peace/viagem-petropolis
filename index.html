@@ -398,6 +398,13 @@
   .day-card p.meal-line strong {
     color: var(--green-dark);
   }
+  .day-card p.meal-line.cancelled {
+    text-decoration: line-through;
+    color: #999;
+  }
+  .day-card p.meal-line.cancelled strong {
+    color: #999;
+  }
   .day-card .tag {
     display: inline-block;
     font-size: 0.75rem;
@@ -947,26 +954,28 @@
       <h3>Chegada da tropa</h3>
       <p><strong>Pré alinhado pra sair as 3:00.</strong></p>
       <p>Curtir a casa, deixar os melhores fotógrafos de MG e RJ trabalharem e ir no mercado.</p>
-      <p class="meal-line"><strong>Almoço:</strong> Risoto com Alcatra que fica bom mas ninguém nunca fez</p>
-      <p class="meal-line"><strong>Janta:</strong> Hambúrguer caseiro</p>
+      <p class="meal-line"><strong>Almoço:</strong> Churrasco</p>
+      <p class="meal-line cancelled"><strong>Janta:</strong> Hambúrguer caseiro</p>
+      <p class="meal-line"><strong>Janta:</strong> Pizza artesanal pra fechar o primeiro dia com chave de ouro 🔑 UHUUL!</p>
     </div>
     <div class="day-card">
       <span class="tag">Sexta</span>
       <h3>Dia do vinho</h3>
       <p class="meal-line"><strong>Almoço:</strong> Fraldinha com arroz</p>
-      <p class="meal-line"><strong>Janta:</strong> Pizza artesanal pra fechar com chave de ouro</p>
+      <p class="meal-line"><strong>Noite:</strong> Sair na cidade (Itaipava ou Petrópolis — ainda a decidir)</p>
     </div>
     <div class="day-card">
       <span class="tag">Sábado</span>
       <h3>Turistando</h3>
       <p>Passeio pela cidade.</p>
-      <p class="meal-line"><strong>Almoço:</strong> Macarrão à bolonhesa</p>
+      <p class="meal-line"><strong>Almoço:</strong> Risoto com Alcatra que fica bom mas ninguém nunca fez</p>
       <p class="meal-line"><strong>Fim de tarde:</strong> Harmonização com vinhos 🤫</p>
       <p class="meal-line"><strong>Janta:</strong> Caldo de mandioca pra esquentar + vinho opcional</p>
     </div>
     <div class="day-card">
       <span class="tag">Domingo</span>
       <h3>Ressaca de saudade</h3>
+      <p class="meal-line"><strong>Almoço:</strong> Macarrão à bolonhesa</p>
       <p>Café da manhã, almocinho na cidade e bem amigos... agora marcar a próxima.</p>
     </div>
     <div class="day-card brasil-card">
