@@ -23,7 +23,7 @@
   .hero {
     position: relative;
     min-height: 100vh;
-    background: url('assets/img/capa-catedral.jpg') center/cover no-repeat;
+    background: url('assets/img/capa-piscina.jpeg') center/cover no-repeat;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -152,103 +152,6 @@
     margin: 0 auto 40px;
   }
 
-  .stay {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 40px;
-    align-items: center;
-  }
-  .stay img {
-    width: 100%;
-    border-radius: 12px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-  }
-  .how-to-arrive-wrap {
-    margin-top: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 12px;
-  }
-  .how-to-arrive-btn {
-    display: inline-block;
-    background: var(--green-dark);
-    color: #fff;
-    border: none;
-    padding: 12px 26px;
-    border-radius: 999px;
-    font-size: 0.95rem;
-    font-weight: 600;
-    letter-spacing: 0.3px;
-    text-align: center;
-    cursor: pointer;
-    transition: background 0.2s;
-    font-family: inherit;
-  }
-  .how-to-arrive-btn:hover {
-    background: var(--green);
-  }
-  .how-to-arrive-btn.secondary-btn {
-    background: transparent;
-    color: var(--green-dark);
-    border: 1px solid var(--green-dark);
-  }
-  .how-to-arrive-btn.secondary-btn:hover {
-    background: var(--green-dark);
-    color: #fff;
-  }
-  .how-to-arrive-btn.day-btn {
-    display: block;
-    margin: 10px 0;
-    padding: 8px 18px;
-    font-size: 0.85rem;
-  }
-  .how-to-arrive-btn.wine-btn {
-    background: #6d1b2b;
-  }
-  .how-to-arrive-btn.wine-btn:hover {
-    background: #8a2438;
-  }
-
-  .modal-overlay {
-    display: none;
-    position: fixed;
-    inset: 0;
-    background: rgba(20,30,20,0.55);
-    z-index: 100;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
-  }
-  .modal-overlay.open {
-    display: flex;
-  }
-  .modal-box {
-    position: relative;
-    background: var(--cream);
-    border-radius: 12px;
-    max-width: 440px;
-    width: 100%;
-    max-height: 85vh;
-    overflow-y: auto;
-    padding: 32px 28px;
-    box-shadow: 0 20px 60px rgba(0,0,0,0.3);
-  }
-  .modal-box h3 {
-    color: var(--green-dark);
-    font-size: 1.3rem;
-    margin-bottom: 14px;
-  }
-  .modal-address-row {
-    display: flex;
-    align-items: flex-start;
-    gap: 8px;
-    margin-bottom: 14px;
-  }
-  .modal-address {
-    font-weight: 700;
-    color: var(--text);
-  }
   .copy-btn {
     flex-shrink: 0;
     background: none;
@@ -278,101 +181,6 @@
   .copy-btn-inline svg {
     width: 14px;
     height: 14px;
-  }
-  .modal-list {
-    list-style: none;
-    margin-bottom: 16px;
-  }
-  .modal-list li {
-    font-size: 0.92rem;
-    color: #444;
-    padding: 6px 0 6px 18px;
-    position: relative;
-    border-bottom: 1px solid rgba(0,0,0,0.06);
-  }
-  .modal-list li:last-child {
-    border-bottom: none;
-  }
-  .modal-list li::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 15px;
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    background: var(--gold);
-  }
-  .modal-list.icon-list li {
-    padding-left: 0;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-  .modal-list.icon-list li::before {
-    content: none;
-  }
-  .li-icon {
-    flex-shrink: 0;
-    width: 22px;
-    height: 22px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--green-dark);
-  }
-  .li-icon svg {
-    width: 19px;
-    height: 19px;
-  }
-  .modal-schedule {
-    font-size: 0.92rem;
-    color: #444;
-    margin-bottom: 6px;
-  }
-  .modal-price {
-    font-size: 0.92rem;
-    color: #444;
-    margin-bottom: 4px;
-  }
-  .modal-links-row {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin-top: 10px;
-  }
-  .modal-links-row .modal-map-link {
-    margin-top: 0;
-  }
-  .modal-note {
-    font-size: 0.92rem;
-    color: #555;
-    margin-bottom: 12px;
-  }
-  .modal-close {
-    position: absolute;
-    top: 12px;
-    right: 16px;
-    background: none;
-    border: none;
-    font-size: 1.6rem;
-    line-height: 1;
-    color: #888;
-    cursor: pointer;
-  }
-  .modal-close:hover {
-    color: var(--text);
-  }
-  .modal-map-link {
-    display: inline-block;
-    margin-top: 8px;
-    background: var(--gold);
-    color: var(--green-dark);
-    padding: 12px 26px;
-    border-radius: 999px;
-    text-decoration: none;
-    font-weight: 700;
-    font-size: 0.95rem;
   }
   .itinerary {
     display: grid;
@@ -416,29 +224,6 @@
     letter-spacing: 1px;
     margin-bottom: 6px;
   }
-  .brasil-card {
-    border-left: 8px solid #ffdf00;
-    background: #009c3b;
-  }
-  .brasil-card .tag {
-    display: inline-block;
-    background: #002776;
-    color: #ffdf00;
-    padding: 4px 16px;
-    border-radius: 999px;
-    letter-spacing: 1px;
-    white-space: nowrap;
-    line-height: 1.4;
-  }
-  .brasil-card h3 {
-    color: #ffdf00;
-    font-size: 1.4rem;
-    font-weight: bold;
-  }
-  .brasil-card p {
-    color: #ffffff;
-  }
-
   .breakfast-card {
     display: flex;
     align-items: center;
@@ -484,6 +269,41 @@
     .breakfast-card { flex-direction: column; text-align: center; }
   }
 
+  .past-items-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin: 0 auto 24px;
+    background: transparent;
+    border: 1px solid var(--gold);
+    color: var(--green-dark);
+    padding: 10px 22px;
+    border-radius: 999px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    font-family: inherit;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  .past-items-toggle:hover {
+    background: var(--cream);
+  }
+  .past-items-chevron {
+    width: 16px;
+    height: 16px;
+    transition: transform 0.2s;
+  }
+  .past-items-toggle[aria-expanded="true"] .past-items-chevron {
+    transform: rotate(180deg);
+  }
+  .past-items-content {
+    display: none;
+  }
+  .past-items-content.open {
+    display: block;
+  }
+
   .shopping-link-wrap {
     text-align: center;
     margin-bottom: 32px;
@@ -506,18 +326,90 @@
     box-shadow: 0 8px 22px rgba(201,161,90,0.55);
   }
 
-  .fun-photos-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 20px;
-  }
-  .fun-photos-grid img {
-    width: 100%;
+  .fun-photos-slideshow {
+    position: relative;
+    max-width: 480px;
+    aspect-ratio: 6 / 5;
+    margin: 0 auto;
     border-radius: 12px;
+    overflow: hidden;
     box-shadow: 0 10px 30px rgba(0,0,0,0.15);
   }
-  @media (max-width: 700px) {
-    .fun-photos-grid { grid-template-columns: 1fr; }
+  .fun-photos-slideshow img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    opacity: 0;
+    transition: opacity 0.15s ease;
+  }
+  .fun-photos-slideshow img.active {
+    opacity: 1;
+  }
+  .trip-2027-frame {
+    position: relative;
+    max-width: 480px;
+    aspect-ratio: 6 / 5;
+    margin: 0 auto;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+  }
+  .trip-2027-frame img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+  }
+  .trip-2027-frame img.active {
+    opacity: 1;
+  }
+  .subsection-title {
+    font-size: 0.78rem;
+    color: var(--gold);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    text-align: center;
+    margin: 0 0 16px;
+  }
+  #trip-2027 .fun-photos-slideshow {
+    margin-bottom: 36px;
+  }
+  .place-card {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transition: opacity 0.15s ease;
+  }
+  .place-card.active {
+    opacity: 1;
+  }
+  .place-card img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    opacity: 1;
+  }
+  .place-name {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 10px 14px calc(10px + env(safe-area-inset-bottom, 0px));
+    background: linear-gradient(0deg, rgba(0,0,0,0.75), rgba(0,0,0,0));
+    color: #fff;
+    font-size: 1.05rem;
+    font-weight: 700;
+    text-align: center;
   }
   .weather-note {
     text-align: center;
@@ -674,9 +566,17 @@
     color: #777;
     font-size: 0.85rem;
   }
+  .footer-address {
+    margin-bottom: 8px;
+  }
+  .footer-map-link {
+    display: inline-block;
+    color: var(--gold);
+    text-decoration: underline;
+    margin-bottom: 16px;
+  }
 
   @media (max-width: 700px) {
-    .stay { grid-template-columns: 1fr; }
     .people-grid { gap: 8px; }
     .people-grid span { padding: 6px 12px; font-size: 0.78rem; }
   }
@@ -695,10 +595,6 @@
     }
     .breakfast-card {
       padding: 16px 16px;
-    }
-    .modal-box {
-      padding: 24px 18px;
-      max-height: 90vh;
     }
   }
 </style>
@@ -728,94 +624,112 @@
 <section id="fun-photos">
   <h2 class="section-title">Chegamos!</h2>
   <div class="section-line"></div>
-  <div class="fun-photos-grid">
-    <img src="assets/img/foto-divertida-1.png" alt="Pintus na loja">
+  <div class="fun-photos-slideshow" id="fun-photos-slideshow">
+    <img src="assets/img/foto-divertida-1.png" alt="Pintus na loja" class="active">
     <img src="assets/img/foto-divertida-2.png" alt="A tropa no carro">
     <img src="assets/img/foto-divertida-3.png" alt="Preparando o churrasco">
+    <img src="assets/img/foto-divertida-5.jpeg" alt="Mesa com vinagrete e farofa">
+    <img src="assets/img/foto-divertida-6.jpeg" alt="Carnes na brasa">
+    <img src="assets/img/foto-divertida-7.jpeg" alt="Brinde ao entardecer">
+    <img src="assets/img/foto-divertida-8.jpeg" alt="Bagunça na cozinha">
+    <img src="assets/img/foto-divertida-9.jpeg" alt="Fazendo a pizza">
+    <img src="assets/img/foto-divertida-10.jpeg" alt="Meias engraçadas">
+    <img src="assets/img/foto-divertida-11.jpeg" alt="A galera reunida">
+    <img src="assets/img/foto-divertida-12.jpeg" alt="Dança da tropa">
+    <img src="assets/img/foto-divertida-15.png" alt="Meme original do Beckham">
+    <img src="assets/img/foto-divertida-14.png" alt="Meme do Beckham assistindo ao jogo do Brasil">
+    <img src="assets/img/foto-divertida-17.png" alt="Dançando na cozinha">
+    <img src="assets/img/foto-divertida-18.png" alt="Pôr do sol na serra">
+    <img src="assets/img/foto-divertida-19.png" alt="Abrindo o espumante ao entardecer">
+    <img src="assets/img/foto-divertida-20.png" alt="Brinde com espumante">
+    <img src="assets/img/foto-divertida-22.png" alt="Meme da capa da Veja">
+    <img src="assets/img/foto-divertida-16.png" alt="Fazendo a massa da pizza">
+    <img src="assets/img/foto-divertida-23.jpeg" alt="Grupo reunido">
   </div>
 </section>
 
-<div class="modal-overlay" id="map-modal-overlay">
-  <div class="modal-box">
-    <button type="button" class="modal-close" id="map-modal-close" aria-label="Fechar">&times;</button>
-    <h3>Como chegar</h3>
-    <div class="modal-address-row">
-      <p class="modal-address" id="address-text">Estrada União e Indústria, 26000 — Pedro do Rio, Petrópolis/RJ, 25770-000</p>
-      <button type="button" class="copy-btn" data-copy="Estrada União e Indústria, 26000 — Pedro do Rio, Petrópolis/RJ, 25770-000" aria-label="Copiar endereço" title="Copiar endereço">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="12" height="12" rx="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-      </button>
-    </div>
-    <p class="modal-note">A entrada da subida pro condomínio não tem placa (é considerada rua da prefeitura). É só continuar subindo até achar a entrada principal do <strong>Condomínio Highland</strong>.</p>
-    <p class="modal-note">Se preferir, busque direto no Google/Waze por<br>
-      <strong>"Toucan Wood House"</strong>
-      <button type="button" class="copy-btn copy-btn-inline" data-copy="Toucan Wood House" aria-label="Copiar Toucan Wood House" title="Copiar">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="12" height="12" rx="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-      </button><br>
-      ou <strong>"Condomínio Highland"</strong>
-      <button type="button" class="copy-btn copy-btn-inline" data-copy="Condomínio Highland" aria-label="Copiar Condomínio Highland" title="Copiar">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="12" height="12" rx="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-      </button>
-    </p>
-    <a class="modal-map-link" href="https://goo.gl/maps/os2q9SdVfULZh3pv7?g_st=aw" target="_blank" rel="noopener">Abrir no mapa</a>
-  </div>
-</div>
+<section id="trip-2027">
+  <h2 class="section-title">Viagem de 2027</h2>
+  <div class="section-line"></div>
 
-<div class="modal-overlay" id="house-items-modal-overlay">
-  <div class="modal-box">
-    <button type="button" class="modal-close" id="house-items-modal-close" aria-label="Fechar">&times;</button>
-    <h3>O que tem na casa</h3>
-    <ul class="modal-list icon-list">
-      <li><span class="li-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 20L9 9l4 6 3-5 5 10H3z"></path></svg></span>Varanda/quintal com vista pra montanha e rede</li>
-      <li><span class="li-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c4 0 7-3 7-7 0-4-3-6-4-9-1 2-2 3-2 5 0-2-1-4-3-6-1 4-5 6-5 10 0 4 3 7 7 7z"></path></svg></span>Lareira a lenha</li>
-      <li><span class="li-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11h16v2a8 8 0 01-16 0v-2z"></path><path d="M4 11V9a2 2 0 012-2h12a2 2 0 012 2v2"></path><line x1="2" y1="9" x2="4" y2="9"></line><line x1="20" y1="9" x2="22" y2="9"></line></svg></span>Cozinha completa (fogão, forno e geladeira)</li>
-      <li><span class="li-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a4 4 0 010 8h-1"></path><path d="M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8z"></path><line x1="6" y1="1" x2="6" y2="4"></line><line x1="10" y1="1" x2="10" y2="4"></line><line x1="14" y1="1" x2="14" y2="4"></line></svg></span>Cafeteira, liquidificador e freezer</li>
-      <li><span class="li-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 14.76V3.5a2.5 2.5 0 00-5 0v11.26a4.5 4.5 0 105 0z"></path></svg></span>Ar-condicionado e aquecimento</li>
-      <li><span class="li-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.55a11 11 0 0114.08 0"></path><path d="M1.42 9a16 16 0 0121.16 0"></path><path d="M8.53 16.11a6 6 0 016.95 0"></path><line x1="12" y1="20" x2="12.01" y2="20"></line></svg></span>Wi-Fi e TV</li>
-      <li><span class="li-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 13l2-5a2 2 0 012-1h10a2 2 0 012 1l2 5"></path><rect x="1" y="13" width="22" height="6" rx="1"></rect><circle cx="6.5" cy="19" r="1.5"></circle><circle cx="17.5" cy="19" r="1.5"></circle></svg></span>Estacionamento gratuito (5 vagas)</li>
-      <li><span class="li-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="10" rx="2"></rect><path d="M7 11V7a5 5 0 0110 0v4"></path></svg></span>Condomínio fechado com portaria</li>
-      <li><span class="li-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="3"></rect><circle cx="8" cy="8" r="1" fill="currentColor" stroke="none"></circle><circle cx="16" cy="8" r="1" fill="currentColor" stroke="none"></circle><circle cx="12" cy="12" r="1" fill="currentColor" stroke="none"></circle><circle cx="8" cy="16" r="1" fill="currentColor" stroke="none"></circle><circle cx="16" cy="16" r="1" fill="currentColor" stroke="none"></circle></svg></span>Jogos de tabuleiro e jogos gigantes</li>
-      <li><span class="li-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 15c2 1.4 4 1.4 6 0s4-1.4 6 0 4 1.4 6 0"></path><path d="M2 19c2 1.4 4 1.4 6 0s4-1.4 6 0 4 1.4 6 0"></path></svg></span>Piscina interna</li>
-      <li><span class="li-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9.59 4.59A2 2 0 1111 8H2"></path><path d="M12.59 19.41A2 2 0 1014 16H2"></path><path d="M17.73 7.73A2.5 2.5 0 1119.5 12H2"></path></svg></span>Secador de cabelo e ferro de passar</li>
-    </ul>
-    <a class="modal-map-link" href="https://www.airbnb.com.br/rooms/1661007944853819713" target="_blank" rel="noopener">Ver anúncio completo no Airbnb</a>
+  <p class="subsection-title">Nosso destino</p>
+  <div class="trip-2027-frame">
+    <img src="assets/img/foto-2027-resultado.jpeg" alt="Resultado do sorteio: Angra dos Reis" class="active">
   </div>
-</div>
+
+  <p class="subsection-title" style="padding-top: 12px;">Pra onde não vamos</p>
+  <div class="fun-photos-slideshow" id="nowhere-slideshow">
+    <div class="place-card active"><img src="assets/img/place-hopihari.jpg" alt="Hopi Hari"><span class="place-name">Hopi Hari</span></div>
+    <div class="place-card"><img src="assets/img/place-machupicchu.jpg" alt="Machu Picchu"><span class="place-name">Machu Picchu</span></div>
+    <div class="place-card"><img src="assets/img/place-sanandres.jpg" alt="San Andrés"><span class="place-name">San Andrés</span></div>
+    <div class="place-card"><img src="assets/img/place-comandatuba.jpg" alt="Transamérica Comandatuba"><span class="place-name">Transamérica Comandatuba</span></div>
+    <div class="place-card"><img src="assets/img/place-cartagena.jpg" alt="Cartagena"><span class="place-name">Cartagena</span></div>
+    <div class="place-card"><img src="assets/img/place-maceio.jpg" alt="Maceió"><span class="place-name">Maceió</span></div>
+    <div class="place-card"><img src="assets/img/place-atacama.jpg" alt="Deserto do Atacama"><span class="place-name">Deserto do Atacama</span></div>
+    <div class="place-card"><img src="assets/img/place-franca.jpg" alt="França"><span class="place-name">França</span></div>
+    <div class="place-card"><img src="assets/img/place-natal.jpg" alt="Natal"><span class="place-name">Natal</span></div>
+    <div class="place-card"><img src="assets/img/place-cancun.jpg" alt="Cancún"><span class="place-name">Cancún</span></div>
+    <div class="place-card"><img src="assets/img/place-lencois.jpg" alt="Lençóis Maranhenses"><span class="place-name">Lençóis Maranhenses</span></div>
+    <div class="place-card"><img src="assets/img/place-noronha.jpg" alt="Fernando de Noronha"><span class="place-name">Fernando de Noronha</span></div>
+    <div class="place-card"><img src="assets/img/place-floripa.jpg" alt="Floripa"><span class="place-name">Floripa</span></div>
+    <div class="place-card"><img src="assets/img/place-buenosaires.jpg" alt="Buenos Aires"><span class="place-name">Buenos Aires</span></div>
+    <div class="place-card"><img src="assets/img/place-ushuaia.jpg" alt="Ushuaia"><span class="place-name">Ushuaia</span></div>
+    <div class="place-card"><img src="assets/img/place-paris.jpg" alt="Paris"><span class="place-name">Paris</span></div>
+    <div class="place-card"><img src="assets/img/place-monteverde.jpg" alt="Monte Verde"><span class="place-name">Monte Verde</span></div>
+    <div class="place-card"><img src="assets/img/place-tailandia.jpg" alt="Tailândia"><span class="place-name">Tailândia</span></div>
+    <div class="place-card"><img src="assets/img/place-jericoacoara.jpg" alt="Jericoacoara"><span class="place-name">Jericoacoara</span></div>
+    <div class="place-card"><img src="assets/img/place-noruega.jpg" alt="Noruega"><span class="place-name">Noruega</span></div>
+    <div class="place-card"><img src="assets/img/place-picodabandeira.jpg" alt="Pico da Bandeira"><span class="place-name">Pico da Bandeira</span></div>
+    <div class="place-card"><img src="assets/img/place-puntacana.jpg" alt="Punta Cana"><span class="place-name">Punta Cana</span></div>
+    <div class="place-card"><img src="assets/img/place-milagres.jpg" alt="Milagres"><span class="place-name">Milagres</span></div>
+  </div>
+</section>
 
 <section id="itinerary">
   <h2 class="section-title">Cardápio do Chefe Felipe + Roteiro</h2>
   <div class="section-line"></div>
-  <div class="shopping-link-wrap">
-    <a class="shopping-link" href="lista-compras.html">Ver lista de compras</a>
-  </div>
-  <div class="breakfast-card">
-    <div class="breakfast-icon">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a4 4 0 010 8h-1"></path><path d="M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8z"></path><line x1="6" y1="1" x2="6" y2="4"></line><line x1="10" y1="1" x2="10" y2="4"></line><line x1="14" y1="1" x2="14" y2="4"></line></svg>
+
+  <button type="button" class="past-items-toggle" id="past-items-toggle" aria-expanded="false">
+    <span>Itens passados</span>
+    <svg class="past-items-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+  </button>
+  <div class="past-items-content" id="past-items-content">
+    <div class="shopping-link-wrap">
+      <a class="shopping-link" href="lista-compras.html">Ver lista de compras</a>
     </div>
-    <div>
-      <h3>Café da manhã &amp; da tarde</h3>
-      <p>Pão, presunto, muçarela, ovo.</p>
-      <p>Com direito a chimarrão e café especial da <a href="https://www.instagram.com/43box.coffee/" target="_blank" rel="noopener" class="brand-link">@43box.coffee</a>.</p>
+    <div class="breakfast-card">
+      <div class="breakfast-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a4 4 0 010 8h-1"></path><path d="M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8z"></path><line x1="6" y1="1" x2="6" y2="4"></line><line x1="10" y1="1" x2="10" y2="4"></line><line x1="14" y1="1" x2="14" y2="4"></line></svg>
+      </div>
+      <div>
+        <h3>Café da manhã &amp; da tarde</h3>
+        <p>Pão, presunto, muçarela, ovo.</p>
+        <p>Com direito a chimarrão e café especial da <a href="https://www.instagram.com/43box.coffee/" target="_blank" rel="noopener" class="brand-link">@43box.coffee</a>.</p>
+      </div>
+    </div>
+    <div class="itinerary">
+      <div class="day-card">
+        <span class="tag">Quinta</span>
+        <h3>Chegada da tropa</h3>
+        <p><strong>Pré alinhado pra sair as 3:00.</strong></p>
+        <p>Curtir a casa, deixar os melhores fotógrafos de MG e RJ trabalharem e ir no mercado.</p>
+        <p class="meal-line"><strong>Almoço:</strong> Churrasco</p>
+        <p class="meal-line cancelled"><strong>Janta:</strong> Hambúrguer caseiro</p>
+        <p class="meal-line"><strong>Janta:</strong> Pizza artesanal pra fechar o primeiro dia com chave de ouro 🔑 UHUUL!</p>
+      </div>
     </div>
   </div>
+
   <div class="itinerary">
     <div class="day-card">
-      <span class="tag">Quinta</span>
-      <h3>Chegada da tropa</h3>
-      <p><strong>Pré alinhado pra sair as 3:00.</strong></p>
-      <p>Curtir a casa, deixar os melhores fotógrafos de MG e RJ trabalharem e ir no mercado.</p>
-      <p class="meal-line"><strong>Almoço:</strong> Churrasco</p>
-      <p class="meal-line cancelled"><strong>Janta:</strong> Hambúrguer caseiro</p>
-      <p class="meal-line"><strong>Janta:</strong> Pizza artesanal pra fechar o primeiro dia com chave de ouro 🔑 UHUUL!</p>
-    </div>
-    <div class="day-card">
       <span class="tag">Sexta</span>
-      <h3>Dia do vinho</h3>
+      <h3>Dia de sair de noite</h3>
       <p class="meal-line"><strong>Almoço:</strong> Fraldinha com arroz</p>
       <p class="meal-line"><strong>Noite:</strong> Sair na cidade (Itaipava ou Petrópolis — ainda a decidir)</p>
     </div>
     <div class="day-card">
       <span class="tag">Sábado</span>
-      <h3>Turistando</h3>
+      <h3>Turistando + Harmonização</h3>
       <p>Passeio pela cidade.</p>
       <p class="meal-line"><strong>Almoço:</strong> Risoto com Alcatra que fica bom mas ninguém nunca fez</p>
       <p class="meal-line"><strong>Fim de tarde:</strong> Harmonização com vinhos 🤫</p>
@@ -826,11 +740,6 @@
       <h3>Ressaca de saudade</h3>
       <p class="meal-line"><strong>Almoço:</strong> Macarrão à bolonhesa</p>
       <p>Café da manhã, almocinho na cidade e bem amigos... agora marcar a próxima.</p>
-    </div>
-    <div class="day-card brasil-card">
-      <span class="tag">Extra adiado</span>
-      <h3>Vem hexa!</h3>
-      <p>O sonho do hexa foi adiado pra 21/07/2030. Qual viagem esse dia?</p>
     </div>
   </div>
 </section>
@@ -854,26 +763,11 @@
   </div>
 </section>
 
-<section id="stay">
-  <h2 class="section-title">O pouso da tropa</h2>
-  <div class="section-line"></div>
-  <div class="stay">
-    <img src="assets/img/foto2.png" alt="Casa em Itaipava">
-    <div>
-      <p>250m² (<strong>31,25m² por pessoa</strong>) de refúgio em Itaipava, todo em madeirão, com vista pra montanha e piscina de 45m² (<strong>5,6m² por pessoa</strong>) geladinha. Um resort particular só nosso mesmo.</p>
-      <div class="how-to-arrive-wrap">
-        <button type="button" class="how-to-arrive-btn secondary-btn" id="house-items-btn">O que tem na casa</button>
-        <button type="button" class="how-to-arrive-btn" id="how-to-arrive-btn">Como chegar</button>
-      </div>
-    </div>
-  </div>
-</section>
-
 <section class="people">
   <h2 class="section-title">Bora ou bora?</h2>
   <div class="section-line"></div>
   <div class="people-photo-wrap">
-    <img src="assets/img/tropa.png" alt="A Tropa reunida">
+    <img src="assets/img/tropa2.jpeg" alt="A Tropa reunida">
   </div>
   <p class="people-row-label">Quem manda</p>
   <div class="people-grid">
@@ -892,7 +786,14 @@
 </section>
 
 <footer>
-  Feito com amor pra viagem a Petrópolis
+  <p class="footer-address">
+    📍 Estrada União e Indústria, 26000 — Pedro do Rio, Petrópolis/RJ, 25770-000
+    <button type="button" class="copy-btn copy-btn-inline" data-copy="Estrada União e Indústria, 26000 — Pedro do Rio, Petrópolis/RJ, 25770-000" aria-label="Copiar endereço" title="Copiar endereço">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="12" height="12" rx="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+    </button>
+  </p>
+  <a class="footer-map-link" href="https://goo.gl/maps/os2q9SdVfULZh3pv7?g_st=aw" target="_blank" rel="noopener">Abrir no mapa</a>
+  <p>Feito com amor pra viagem a Petrópolis</p>
 </footer>
 
 <script>
@@ -924,24 +825,28 @@
   updateCountdown();
   setInterval(updateCountdown, 1000);
 
-  function wireModal(openBtnId, closeBtnId, overlayId) {
-    var overlay = document.getElementById(overlayId);
-    document.getElementById(openBtnId).addEventListener('click', function () {
-      overlay.classList.add('open');
-    });
-    document.getElementById(closeBtnId).addEventListener('click', function () {
-      overlay.classList.remove('open');
-    });
-    overlay.addEventListener('click', function (e) {
-      if (e.target === overlay) overlay.classList.remove('open');
-    });
-    document.addEventListener('keydown', function (e) {
-      if (e.key === 'Escape') overlay.classList.remove('open');
-    });
+  function runSlideshow(containerId, intervalMs) {
+    var slides = document.querySelectorAll('#' + containerId + ' > *');
+    if (slides.length < 2) return;
+    var current = 0;
+    setInterval(function () {
+      slides[current].classList.remove('active');
+      current = (current + 1) % slides.length;
+      slides[current].classList.add('active');
+    }, intervalMs);
   }
 
-  wireModal('how-to-arrive-btn', 'map-modal-close', 'map-modal-overlay');
-  wireModal('house-items-btn', 'house-items-modal-close', 'house-items-modal-overlay');
+  runSlideshow('fun-photos-slideshow', 500);
+  runSlideshow('nowhere-slideshow', 300);
+
+  (function () {
+    var toggle = document.getElementById('past-items-toggle');
+    var content = document.getElementById('past-items-content');
+    toggle.addEventListener('click', function () {
+      var open = content.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+  })();
 
   document.querySelectorAll('.copy-btn').forEach(function (btn) {
     var originalSvg = btn.innerHTML;
