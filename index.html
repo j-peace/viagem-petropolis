@@ -22,7 +22,7 @@
   }
   .hero {
     position: relative;
-    min-height: 100vh;
+    min-height: 68vh;
     background: url('assets/img/capa-piscina.jpeg') center/cover no-repeat;
     display: flex;
     align-items: center;
@@ -60,12 +60,11 @@
     margin-bottom: 16px;
   }
   .hero-content p.sub {
-    font-size: clamp(1.8rem, 6vw, 3.6rem);
+    font-size: clamp(1.6rem, 5vw, 3rem);
     font-weight: 700;
     letter-spacing: -0.5px;
     text-shadow: 0 4px 20px rgba(0,0,0,0.35);
     opacity: 0.95;
-    margin-bottom: 40px;
   }
 
   .countdown {
@@ -106,31 +105,10 @@
     margin-top: 4px;
     color: #fff;
   }
-  .countdown-hype {
-    font-size: clamp(1.1rem, 3vw, 1.4rem);
-    font-weight: 700;
-    color: #ffd876;
-    text-shadow: 0 2px 12px rgba(0,0,0,0.5);
-    margin-bottom: 18px;
-    letter-spacing: 0.3px;
-  }
   .countdown-done {
     font-size: 1.6rem;
     color: var(--gold);
     display: none;
-  }
-  .countdown-almost {
-    margin-top: 20px;
-    font-size: clamp(1.1rem, 3.2vw, 1.5rem);
-    font-weight: 800;
-    color: #ffd876;
-    text-shadow: 0 2px 12px rgba(0,0,0,0.5);
-    letter-spacing: 0.3px;
-    animation: countdown-bounce 1.2s ease-in-out infinite;
-  }
-  @keyframes countdown-bounce {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-6px); }
   }
 
   section {
@@ -181,149 +159,6 @@
   .copy-btn-inline svg {
     width: 14px;
     height: 14px;
-  }
-  .itinerary {
-    display: grid;
-    gap: 20px;
-  }
-  .day-card {
-    background: #fff;
-    border-left: 4px solid var(--gold);
-    border-radius: 8px;
-    padding: 20px 20px;
-    box-shadow: 0 4px 14px rgba(0,0,0,0.06);
-  }
-  .day-card h3 {
-    color: var(--green-dark);
-    font-size: 1.2rem;
-    margin-bottom: 8px;
-    text-transform: capitalize;
-  }
-  .day-card p {
-    font-size: 0.98rem;
-    color: #444;
-  }
-  .day-card p.meal-line {
-    margin-top: 6px;
-  }
-  .day-card p.meal-line strong {
-    color: var(--green-dark);
-  }
-  .day-card p.meal-line.cancelled {
-    text-decoration: line-through;
-    color: #999;
-  }
-  .day-card p.meal-line.cancelled strong {
-    color: #999;
-  }
-  .day-card .tag {
-    display: inline-block;
-    font-size: 0.75rem;
-    color: var(--gold);
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    margin-bottom: 6px;
-  }
-  .breakfast-card {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    background: linear-gradient(135deg, #fff8ea, #fdf1da);
-    border: 1px solid rgba(201,161,90,0.4);
-    border-left: 5px solid var(--gold);
-    border-radius: 10px;
-    padding: 20px 26px;
-    margin-bottom: 32px;
-    box-shadow: 0 6px 18px rgba(201,161,90,0.18);
-  }
-  .breakfast-icon {
-    flex-shrink: 0;
-    width: 52px;
-    height: 52px;
-    border-radius: 50%;
-    background: var(--gold);
-    color: #fff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .breakfast-icon svg {
-    width: 26px;
-    height: 26px;
-  }
-  .breakfast-card h3 {
-    color: var(--green-dark);
-    font-size: 1.1rem;
-    margin-bottom: 4px;
-  }
-  .breakfast-card p {
-    font-size: 0.92rem;
-    color: #555;
-    margin: 0;
-  }
-  .breakfast-card .brand-link {
-    color: #1a73e8;
-    text-decoration: underline;
-  }
-  @media (max-width: 600px) {
-    .breakfast-card { flex-direction: column; text-align: center; }
-  }
-
-  .past-items-toggle {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    margin: 0 auto 24px;
-    background: transparent;
-    border: 1px solid var(--gold);
-    color: var(--green-dark);
-    padding: 10px 22px;
-    border-radius: 999px;
-    font-size: 0.9rem;
-    font-weight: 600;
-    font-family: inherit;
-    cursor: pointer;
-    transition: background 0.2s;
-  }
-  .past-items-toggle:hover {
-    background: var(--cream);
-  }
-  .past-items-chevron {
-    width: 16px;
-    height: 16px;
-    transition: transform 0.2s;
-  }
-  .past-items-toggle[aria-expanded="true"] .past-items-chevron {
-    transform: rotate(180deg);
-  }
-  .past-items-content {
-    display: none;
-  }
-  .past-items-content.open {
-    display: block;
-  }
-
-  .shopping-link-wrap {
-    text-align: center;
-    margin-bottom: 32px;
-  }
-  .shopping-link {
-    display: inline-block;
-    background: var(--gold);
-    color: var(--green-dark);
-    padding: 14px 32px;
-    border-radius: 999px;
-    text-decoration: none;
-    font-size: 1.02rem;
-    font-weight: 700;
-    letter-spacing: 0.5px;
-    box-shadow: 0 6px 18px rgba(201,161,90,0.45);
-    transition: transform 0.15s, box-shadow 0.15s;
-  }
-  .shopping-link:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 22px rgba(201,161,90,0.55);
   }
 
   .fun-photos-slideshow {
@@ -411,109 +246,165 @@
     font-weight: 700;
     text-align: center;
   }
-  .weather-note {
+  #wedding {
+    position: relative;
+    max-width: none;
+    padding: 0;
+    background: url('assets/img/casamento-bg.jpg') center/cover no-repeat;
+  }
+  #wedding::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(20,15,25,0.72) 0%, rgba(20,15,25,0.85) 100%);
+  }
+  .wedding-inner {
+    position: relative;
+    z-index: 1;
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 72px 24px;
     text-align: center;
-    margin-top: 20px;
-    color: #777;
+    color: #fff;
+  }
+  .wedding-eyebrow {
+    text-transform: uppercase;
+    letter-spacing: 3px;
     font-size: 0.85rem;
-    font-style: italic;
+    font-weight: 700;
+    color: #f4cd7a;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+    margin-bottom: 12px;
   }
-  .google-check-wrap {
-    text-align: center;
-    margin-top: 10px;
+  .wedding-title {
+    font-size: clamp(1.8rem, 5vw, 2.8rem);
+    font-weight: 800;
+    line-height: 1.15;
+    text-shadow: 0 4px 20px rgba(0,0,0,0.4);
+    margin-bottom: 28px;
   }
-  .google-check-link {
-    display: inline-block;
-    background: #fff;
-    color: var(--green-dark);
-    border: 1px solid var(--gold);
-    padding: 8px 20px;
-    border-radius: 999px;
-    text-decoration: none;
-    font-size: 0.85rem;
-    transition: background 0.2s;
+  .wedding-sub {
+    font-size: 1.05rem;
+    color: #ffd876;
+    font-weight: 700;
+    margin-top: 22px;
   }
-  .google-check-link:hover {
-    background: var(--cream);
+  @media (max-width: 600px) {
+    .wedding-inner { padding: 52px 14px; }
   }
 
-  .wchart-card {
-    position: relative;
-    background: #fff;
-    border-radius: 10px;
-    padding: 20px 16px 14px;
-    box-shadow: 0 4px 14px rgba(0,0,0,0.06);
-    border-top: 4px solid var(--gold);
-    margin-top: 18px;
-  }
-  .wchart-title {
-    font-size: 0.78rem;
-    color: var(--gold);
-    text-transform: uppercase;
-    letter-spacing: 1px;
+  .photos-caption {
     text-align: center;
-    margin-bottom: 18px;
+    color: #777;
+    font-size: 0.9rem;
+    font-style: italic;
+    margin-top: -4px;
+    margin-bottom: 8px;
   }
-  .wchart-rain-corner {
-    position: absolute;
-    top: 16px;
-    right: 16px;
-    font-size: 0.68rem;
-    color: #767676;
-    white-space: nowrap;
-  }
-  .wchart-plot {
-    position: relative;
-    height: 230px;
-    margin: 0 4px 8px;
-  }
-  .wchart-svg { width: 100%; height: 100%; display: block; overflow: visible; }
-  .wchart-area { fill: url(#wchartAreaGrad); stroke: none; }
-  .wchart-line-max {
-    fill: none; stroke: #b8730a; stroke-width: 2px;
-    vector-effect: non-scaling-stroke; stroke-linecap: round; stroke-linejoin: round;
-  }
-  .wchart-line-min {
-    fill: none; stroke: #2f5f91; stroke-width: 2px;
-    vector-effect: non-scaling-stroke; stroke-linecap: round; stroke-linejoin: round;
-  }
-  .wchart-points { position: absolute; inset: 0; }
-  .wchart-dot {
-    position: absolute;
-    width: 9px; height: 9px;
-    border-radius: 50%;
-    transform: translate(-50%, -50%);
-    box-shadow: 0 0 0 2px #fff;
-  }
-  .wchart-dot-max { background: #b8730a; }
-  .wchart-dot-min { background: #2f5f91; }
-  .wchart-icon {
-    position: absolute;
-    font-size: 1.3rem;
-    line-height: 1;
-    transform: translate(-50%, calc(-100% - 30px));
-  }
-  .wchart-val {
-    position: absolute;
-    font-size: 0.74rem;
-    font-weight: 700;
-    white-space: nowrap;
-  }
-  .wchart-val-max { color: var(--text); transform: translate(-50%, calc(-100% - 8px)); }
-  .wchart-val-min { color: #767676; font-weight: 600; transform: translate(-50%, 8px); }
-  .wchart-xaxis {
+
+  .after-card {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    align-items: center;
+    background: #fff;
+    border-radius: 12px;
+    padding: 32px;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.06);
+    border-left: 4px solid var(--gold);
   }
-  .wchart-xcol { text-align: center; }
-  .wchart-xday { font-size: 0.75rem; color: var(--text); font-weight: 600; }
-  .wchart-xdate { font-size: 0.65rem; color: #999; }
+  .after-photo {
+    width: 100%;
+    max-height: 340px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 10px;
+    display: block;
+  }
+  .after-date {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--green-dark);
+    margin-bottom: 16px;
+  }
+  .after-list-title {
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--gold);
+    font-weight: 700;
+    margin-bottom: 6px;
+  }
+  .after-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .after-list li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 9px 0;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text);
+    border-bottom: 1px solid rgba(0,0,0,0.08);
+  }
+  .after-list li:last-child {
+    border-bottom: none;
+  }
+  .after-list li::before {
+    content: '✓';
+    flex-shrink: 0;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: var(--green);
+    color: #fff;
+    font-size: 0.78rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
   @media (max-width: 700px) {
-    .wchart-plot { height: 200px; }
-    .wchart-xday { font-size: 0.68rem; }
-    .wchart-xdate { font-size: 0.58rem; }
-    .wchart-val { font-size: 0.65rem; }
-    .wchart-icon { font-size: 1.05rem; transform: translate(-50%, calc(-100% - 26px)); }
+    .after-card { grid-template-columns: 1fr; gap: 18px; }
+  }
+
+  .places-marquee {
+    overflow: hidden;
+    position: relative;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+  }
+  .places-track {
+    display: flex;
+    width: max-content;
+    animation: places-scroll 25s linear infinite;
+  }
+  .places-track:hover { animation-play-state: paused; }
+  .places-track .place-card {
+    position: relative;
+    flex: 0 0 auto;
+    width: 260px;
+    height: 220px;
+    opacity: 1;
+    inset: auto;
+  }
+  .places-track .place-card img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+  @keyframes places-scroll {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+  @media (max-width: 600px) {
+    .places-track .place-card { width: 180px; height: 160px; }
   }
 
   .people {
@@ -566,15 +457,6 @@
     color: #777;
     font-size: 0.85rem;
   }
-  .footer-address {
-    margin-bottom: 8px;
-  }
-  .footer-map-link {
-    display: inline-block;
-    color: var(--gold);
-    text-decoration: underline;
-    margin-bottom: 16px;
-  }
 
   @media (max-width: 700px) {
     .people-grid { gap: 8px; }
@@ -590,12 +472,6 @@
     section {
       padding: 40px 12px;
     }
-    .day-card {
-      padding: 16px 16px;
-    }
-    .breakfast-card {
-      padding: 16px 16px;
-    }
   }
 </style>
 </head>
@@ -603,29 +479,18 @@
 
 <section class="hero">
   <div class="hero-content">
-    <div class="eyebrow">16 a 19 de julho · bora ou bora?</div>
-    <h1>Chegouu!</h1>
-    <p class="sub">Bora desfrutar Petrópolis.</p>
-
-    
-
-    <p class="countdown-hype" id="countdown-hype">Faltam só algumas horas.  Ta quaseee vem 3 horas da manha!</p>
-    <div class="countdown" id="countdown">
-      <div class="unit"><div class="num" id="days">00</div><div class="label">dias</div></div>
-      <div class="unit"><div class="num" id="hours">00</div><div class="label">horas</div></div>
-      <div class="unit"><div class="num" id="minutes">00</div><div class="label">min</div></div>
-      <div class="unit"><div class="num" id="seconds">00</div><div class="label">seg</div></div>
-    </div>
-    <p class="countdown-almost" id="countdown-almost">Tá quaseeee! 🎉</p>
-    <div class="countdown-done" id="countdown-done">A viagem chegou! 🎉</div>
+    <div class="eyebrow">16 a 19 de julho</div>
+    <h1>Petrópolis 2026</h1>
+    <p class="sub">Superou todas as expectativas!</p>
   </div>
 </section>
 
 <section id="fun-photos">
-  <h2 class="section-title">Chegamos!</h2>
+  <h2 class="section-title">Fotos Petrópolis 2026</h2>
+  <p class="photos-caption">(as fotos não chegam nem perto do que foi)</p>
   <div class="section-line"></div>
   <div class="fun-photos-slideshow" id="fun-photos-slideshow">
-    <img src="assets/img/foto-divertida-1.png" alt="Pintus na loja" class="active">
+    <img src="assets/img/foto-divertida-1.png" alt="Pintus na loja">
     <img src="assets/img/foto-divertida-2.png" alt="A tropa no carro">
     <img src="assets/img/foto-divertida-3.png" alt="Preparando o churrasco">
     <img src="assets/img/foto-divertida-5.jpeg" alt="Mesa com vinagrete e farofa">
@@ -645,6 +510,48 @@
     <img src="assets/img/foto-divertida-22.png" alt="Meme da capa da Veja">
     <img src="assets/img/foto-divertida-16.png" alt="Fazendo a massa da pizza">
     <img src="assets/img/foto-divertida-23.jpeg" alt="Grupo reunido">
+    <img src="assets/img/foto-divertida-24.jpeg" alt="Vinho do Porto Maiworm">
+    <img src="assets/img/foto-divertida-25.jpeg" alt="Cafés especiais da 43box">
+    <img src="assets/img/foto-divertida-26.jpeg" alt="Mesa montada pra harmonização">
+    <img src="assets/img/foto-divertida-27.jpeg" alt="Caldo de mandioca na panela">
+    <img src="assets/img/foto-divertida-28.jpeg" alt="Fritando os salgados">
+    <img src="assets/img/foto-divertida-29.jpeg" alt="Café da manhã e chimarrão">
+    <img src="assets/img/foto-divertida-30.jpeg" alt="Selfie na cidade">
+    <img src="assets/img/foto-divertida-31.jpeg" alt="Casal com o vinho do Porto">
+    <img src="assets/img/foto-divertida-32.jpeg" alt="A tropa no restaurante">
+    <img src="assets/img/foto-divertida-33.jpeg" alt="Servindo a harmonização">
+    <img src="assets/img/foto-divertida-34.png" alt="Vinho de R$ 5.599">
+  </div>
+</section>
+
+<section id="after-petropolis">
+  <h2 class="section-title">After Petrópolis</h2>
+  <div class="section-line"></div>
+  <div class="after-card">
+    <img class="after-photo" src="assets/img/foto-divertida-23.jpeg" alt="A tropa a caminho de Petrópolis">
+    <div class="after-info">
+      <p class="after-date">📅 Dia a definir</p>
+      <p class="after-list-title">Lista de presença</p>
+      <ul class="after-list">
+        <li>Todos</li>
+        <li>Licor de banana</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="wedding">
+  <div class="wedding-inner">
+    <div class="wedding-eyebrow">25 de setembro de 2026</div>
+    <h2 class="wedding-title">Casamento Lucas e Gigi</h2>
+    <div class="countdown" id="countdown">
+      <div class="unit"><div class="num" id="days">00</div><div class="label">dias</div></div>
+      <div class="unit"><div class="num" id="hours">00</div><div class="label">horas</div></div>
+      <div class="unit"><div class="num" id="minutes">00</div><div class="label">min</div></div>
+      <div class="unit"><div class="num" id="seconds">00</div><div class="label">seg</div></div>
+    </div>
+    <p class="wedding-sub">Subia! Descia! 🥂</p>
+    <div class="countdown-done" id="countdown-done">Chegou o grande dia! 💍🎉</div>
   </div>
 </section>
 
@@ -657,9 +564,10 @@
     <img src="assets/img/foto-2027-resultado.jpeg" alt="Resultado do sorteio: Angra dos Reis" class="active">
   </div>
 
-  <p class="subsection-title" style="padding-top: 12px;">Pra onde não vamos</p>
-  <div class="fun-photos-slideshow" id="nowhere-slideshow">
-    <div class="place-card active"><img src="assets/img/place-hopihari.jpg" alt="Hopi Hari"><span class="place-name">Hopi Hari</span></div>
+  <p class="subsection-title" style="padding-top: 40px;">Pra onde não vamos</p>
+  <div class="places-marquee">
+   <div class="places-track" id="places-track">
+    <div class="place-card"><img src="assets/img/place-hopihari.jpg" alt="Hopi Hari"><span class="place-name">Hopi Hari</span></div>
     <div class="place-card"><img src="assets/img/place-machupicchu.jpg" alt="Machu Picchu"><span class="place-name">Machu Picchu</span></div>
     <div class="place-card"><img src="assets/img/place-sanandres.jpg" alt="San Andrés"><span class="place-name">San Andrés</span></div>
     <div class="place-card"><img src="assets/img/place-comandatuba.jpg" alt="Transamérica Comandatuba"><span class="place-name">Transamérica Comandatuba</span></div>
@@ -682,84 +590,7 @@
     <div class="place-card"><img src="assets/img/place-picodabandeira.jpg" alt="Pico da Bandeira"><span class="place-name">Pico da Bandeira</span></div>
     <div class="place-card"><img src="assets/img/place-puntacana.jpg" alt="Punta Cana"><span class="place-name">Punta Cana</span></div>
     <div class="place-card"><img src="assets/img/place-milagres.jpg" alt="Milagres"><span class="place-name">Milagres</span></div>
-  </div>
-</section>
-
-<section id="itinerary">
-  <h2 class="section-title">Cardápio do Chefe Felipe + Roteiro</h2>
-  <div class="section-line"></div>
-
-  <button type="button" class="past-items-toggle" id="past-items-toggle" aria-expanded="false">
-    <span>Itens passados</span>
-    <svg class="past-items-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
-  </button>
-  <div class="past-items-content" id="past-items-content">
-    <div class="shopping-link-wrap">
-      <a class="shopping-link" href="lista-compras.html">Ver lista de compras</a>
-    </div>
-    <div class="breakfast-card">
-      <div class="breakfast-icon">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a4 4 0 010 8h-1"></path><path d="M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8z"></path><line x1="6" y1="1" x2="6" y2="4"></line><line x1="10" y1="1" x2="10" y2="4"></line><line x1="14" y1="1" x2="14" y2="4"></line></svg>
-      </div>
-      <div>
-        <h3>Café da manhã &amp; da tarde</h3>
-        <p>Pão, presunto, muçarela, ovo.</p>
-        <p>Com direito a chimarrão e café especial da <a href="https://www.instagram.com/43box.coffee/" target="_blank" rel="noopener" class="brand-link">@43box.coffee</a>.</p>
-      </div>
-    </div>
-    <div class="itinerary">
-      <div class="day-card">
-        <span class="tag">Quinta</span>
-        <h3>Chegada da tropa</h3>
-        <p><strong>Pré alinhado pra sair as 3:00.</strong></p>
-        <p>Curtir a casa, deixar os melhores fotógrafos de MG e RJ trabalharem e ir no mercado.</p>
-        <p class="meal-line"><strong>Almoço:</strong> Churrasco</p>
-        <p class="meal-line cancelled"><strong>Janta:</strong> Hambúrguer caseiro</p>
-        <p class="meal-line"><strong>Janta:</strong> Pizza artesanal pra fechar o primeiro dia com chave de ouro 🔑 UHUUL!</p>
-      </div>
-    </div>
-  </div>
-
-  <div class="itinerary">
-    <div class="day-card">
-      <span class="tag">Sexta</span>
-      <h3>Dia de sair de noite</h3>
-      <p class="meal-line"><strong>Almoço:</strong> Risoto do chefe</p>
-      <p class="meal-line"><strong>Noite:</strong> Sair na cidade (Itaipava ou Petrópolis — ainda a decidir)</p>
-    </div>
-    <div class="day-card">
-      <span class="tag">Sábado</span>
-      <h3>Turistando + Harmonização</h3>
-      <p>Passeio pela cidade.</p>
-      <p class="meal-line"><strong>Almoço:</strong> Fraldinha com arroz</p>
-      <p class="meal-line"><strong>Fim de tarde:</strong> Harmonização com vinhos 🤫</p>
-      <p class="meal-line"><strong>Janta:</strong> Caldo de mandioca pra esquentar + vinho opcional</p>
-    </div>
-    <div class="day-card">
-      <span class="tag">Domingo</span>
-      <h3>Ressaca de saudade</h3>
-      <p class="meal-line"><strong>Almoço:</strong> Macarrão à bolonhesa</p>
-      <p>Café da manhã, almocinho na cidade e bem amigos... agora marcar a próxima.</p>
-    </div>
-  </div>
-</section>
-
-<section id="weather">
-  <h2 class="section-title">Previsão do tempo</h2>
-  <div class="section-line"></div>
-  <div class="wchart-card" id="weather-chart-card" style="display:none;">
-    <p class="wchart-title">Faixa de temperatura por dia</p>
-    <span class="wchart-rain-corner" id="wchart-rain-corner"></span>
-    <div class="wchart-plot">
-      <svg class="wchart-svg" id="wchart-svg" viewBox="0 0 100 100" preserveAspectRatio="none"></svg>
-      <div class="wchart-points" id="wchart-points"></div>
-    </div>
-    <div class="wchart-xaxis" id="wchart-xaxis"></div>
-  </div>
-
-  <p class="weather-note"><span id="weather-note-text">Usa a api gratuita open meteo. Perto da data fica mais confiável.</span></p>
-  <div class="google-check-wrap">
-    <a class="google-check-link" href="https://www.google.com/search?q=previs%C3%A3o+do+tempo+itaipava+rj" target="_blank" rel="noopener">Double check acesse o Google aqui</a>
+   </div>
   </div>
 </section>
 
@@ -786,18 +617,11 @@
 </section>
 
 <footer>
-  <p class="footer-address">
-    📍 Estrada União e Indústria, 26000 — Pedro do Rio, Petrópolis/RJ, 25770-000
-    <button type="button" class="copy-btn copy-btn-inline" data-copy="Estrada União e Indústria, 26000 — Pedro do Rio, Petrópolis/RJ, 25770-000" aria-label="Copiar endereço" title="Copiar endereço">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="12" height="12" rx="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-    </button>
-  </p>
-  <a class="footer-map-link" href="https://goo.gl/maps/os2q9SdVfULZh3pv7?g_st=aw" target="_blank" rel="noopener">Abrir no mapa</a>
   <p>Feito com amor pra viagem a Petrópolis</p>
 </footer>
 
 <script>
-  var targetDate = new Date("2026-07-16T03:00:00-03:00").getTime();
+  var targetDate = new Date("2026-09-25T00:00:00-03:00").getTime();
 
   function updateCountdown() {
     var now = new Date().getTime();
@@ -805,8 +629,6 @@
 
     if (diff <= 0) {
       document.getElementById('countdown').style.display = 'none';
-      document.getElementById('countdown-hype').style.display = 'none';
-      document.getElementById('countdown-almost').style.display = 'none';
       document.getElementById('countdown-done').style.display = 'block';
       return;
     }
@@ -836,16 +658,24 @@
     }, intervalMs);
   }
 
+  (function () {
+    var box = document.getElementById('fun-photos-slideshow');
+    if (!box) return;
+    var imgs = Array.prototype.slice.call(box.children);
+    for (var i = imgs.length - 1; i > 0; i--) {
+      var j = Math.floor(Math.random() * (i + 1));
+      box.appendChild(imgs[j]);
+      imgs.splice(j, 1);
+    }
+    box.children[0].classList.add('active');
+  })();
+
   runSlideshow('fun-photos-slideshow', 500);
-  runSlideshow('nowhere-slideshow', 300);
 
   (function () {
-    var toggle = document.getElementById('past-items-toggle');
-    var content = document.getElementById('past-items-content');
-    toggle.addEventListener('click', function () {
-      var open = content.classList.toggle('open');
-      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
-    });
+    var track = document.getElementById('places-track');
+    if (!track) return;
+    track.innerHTML += track.innerHTML;
   })();
 
   document.querySelectorAll('.copy-btn').forEach(function (btn) {
@@ -865,136 +695,6 @@
       });
     });
   });
-
-  var weatherIcons = {
-    0: '☀️', 1: '🌤️', 2: '⛅', 3: '☁️',
-    45: '🌫️', 48: '🌫️',
-    51: '🌦️', 53: '🌦️', 55: '🌦️', 56: '🌦️', 57: '🌦️',
-    61: '🌧️', 63: '🌧️', 65: '🌧️', 66: '🌧️', 67: '🌧️',
-    71: '❄️', 73: '❄️', 75: '❄️', 77: '❄️',
-    80: '🌧️', 81: '🌧️', 82: '🌧️',
-    85: '❄️', 86: '❄️',
-    95: '⛈️', 96: '⛈️', 99: '⛈️'
-  };
-
-  function pick(daily, field, idx) {
-    var iconVal = daily[field + '_icon_seamless'][idx];
-    return iconVal !== null ? iconVal : daily[field + '_best_match'][idx];
-  }
-
-  function pickTemp(daily, field, idx) {
-    var iconVal = daily[field + '_icon_seamless'][idx];
-    if (iconVal !== null) return iconVal;
-    return daily[field + '_best_match'][idx] - 2;
-  }
-
-  function smoothCurve(pts) {
-    var d = '';
-    for (var i = 0; i < pts.length - 1; i++) {
-      var p0 = pts[i - 1] || pts[i];
-      var p1 = pts[i];
-      var p2 = pts[i + 1];
-      var p3 = pts[i + 2] || p2;
-      var c1x = p1[0] + (p2[0] - p0[0]) / 6;
-      var c1y = p1[1] + (p2[1] - p0[1]) / 6;
-      var c2x = p2[0] - (p3[0] - p1[0]) / 6;
-      var c2y = p2[1] - (p3[1] - p1[1]) / 6;
-      d += ' C ' + c1x.toFixed(2) + ',' + c1y.toFixed(2) + ' ' + c2x.toFixed(2) + ',' + c2y.toFixed(2) + ' ' + p2[0] + ',' + p2[1];
-    }
-    return d;
-  }
-
-  function renderWeatherChart(rows) {
-    var mins = rows.map(function (r) { return r.min; });
-    var maxs = rows.map(function (r) { return r.max; });
-    var lo = Math.floor(Math.min.apply(null, mins) / 5) * 5;
-    var hi = Math.max(Math.ceil(Math.max.apply(null, maxs) / 5) * 5, lo + 5);
-    var span = hi - lo;
-    var padTop = 30, padBottom = 18;
-    var plotH = 100 - padTop - padBottom;
-
-    function yFor(v) { return padTop + (hi - v) / span * plotH; }
-    function xFor(i) { return (i + 0.5) / rows.length * 100; }
-
-    var maxPts = rows.map(function (r, i) { return [xFor(i), yFor(r.max)]; });
-    var minPts = rows.map(function (r, i) { return [xFor(i), yFor(r.min)]; });
-    var minPtsRev = minPts.slice().reverse();
-
-    var maxPath = 'M ' + maxPts[0][0] + ',' + maxPts[0][1] + smoothCurve(maxPts);
-    var minPath = 'M ' + minPts[0][0] + ',' + minPts[0][1] + smoothCurve(minPts);
-    var areaPath = 'M ' + maxPts[0][0] + ',' + maxPts[0][1] + smoothCurve(maxPts) +
-      ' L ' + minPtsRev[0][0] + ',' + minPtsRev[0][1] + smoothCurve(minPtsRev) + ' Z';
-
-    document.getElementById('wchart-svg').innerHTML =
-      '<defs><linearGradient id="wchartAreaGrad" x1="0" y1="0" x2="0" y2="1">' +
-        '<stop offset="0%" stop-color="#f2c14e" stop-opacity="0.35"></stop>' +
-        '<stop offset="55%" stop-color="#c9a15a" stop-opacity="0.12"></stop>' +
-        '<stop offset="100%" stop-color="#3a6ea5" stop-opacity="0.18"></stop>' +
-      '</linearGradient></defs>' +
-      '<path class="wchart-area" d="' + areaPath + '"></path>' +
-      '<path class="wchart-line-max" d="' + maxPath + '"></path>' +
-      '<path class="wchart-line-min" d="' + minPath + '"></path>';
-
-    var rains = rows.map(function (r) { return r.rain; });
-    var rainLo = Math.min.apply(null, rains), rainHi = Math.max.apply(null, rains);
-    document.getElementById('wchart-rain-corner').textContent =
-      '💧 ' + (rainLo === rainHi ? rainLo + '%' : rainLo + '–' + rainHi + '%');
-
-    document.getElementById('wchart-points').innerHTML = rows.map(function (r, i) {
-      var x = xFor(i);
-      var yMax = yFor(r.max);
-      var yMin = yFor(r.min);
-      return '' +
-        '<div class="wchart-icon" style="left:' + x + '%; top:' + yMax + '%">' + r.icon + '</div>' +
-        '<div class="wchart-dot wchart-dot-max" style="left:' + x + '%; top:' + yMax + '%"></div>' +
-        '<div class="wchart-val wchart-val-max" style="left:' + x + '%; top:' + yMax + '%">' + r.max + '°</div>' +
-        '<div class="wchart-dot wchart-dot-min" style="left:' + x + '%; top:' + yMin + '%"></div>' +
-        '<div class="wchart-val wchart-val-min" style="left:' + x + '%; top:' + yMin + '%">' + r.min + '°</div>';
-    }).join('');
-
-    document.getElementById('wchart-xaxis').innerHTML = rows.map(function (r) {
-      var d = new Date(r.date + 'T12:00:00');
-      var wd = d.toLocaleDateString('pt-BR', { weekday: 'short' }).replace('.', '');
-      wd = wd.charAt(0).toUpperCase() + wd.slice(1);
-      var dm = d.toLocaleDateString('pt-BR', { day: '2-digit', month: '2-digit' });
-      var tip = wd + ' ' + dm + ': mínima ' + r.min + '°, máxima ' + r.max + '°, ' + r.rain + '% de chance de chuva';
-      return '' +
-        '<div class="wchart-xcol" title="' + tip + '">' +
-          '<div class="wchart-xday">' + wd + '</div>' +
-          '<div class="wchart-xdate">' + dm + '</div>' +
-        '</div>';
-    }).join('');
-
-    document.getElementById('weather-chart-card').style.display = 'block';
-  }
-
-  function fetchWeather() {
-    var url = 'https://api.open-meteo.com/v1/forecast?latitude=-22.3833&longitude=-43.1333'
-      + '&daily=weathercode,temperature_2m_max,temperature_2m_min,precipitation_probability_max'
-      + '&timezone=America%2FSao_Paulo&start_date=2026-07-16&end_date=2026-07-19'
-      + '&models=icon_seamless,best_match';
-
-    fetch(url)
-      .then(function (res) { return res.json(); })
-      .then(function (data) {
-        if (!data.daily || !data.daily.time) throw new Error('sem dados');
-        var chartRows = [];
-        data.daily.time.forEach(function (date, idx) {
-          var code = pick(data.daily, 'weathercode', idx);
-          var max = Math.round(pickTemp(data.daily, 'temperature_2m_max', idx));
-          var min = Math.round(pickTemp(data.daily, 'temperature_2m_min', idx));
-          var rain = pick(data.daily, 'precipitation_probability_max', idx);
-          chartRows.push({ date: date, min: min, max: max, rain: rain, icon: weatherIcons[code] || '🌡️' });
-        });
-        if (chartRows.length) renderWeatherChart(chartRows);
-      })
-      .catch(function () {
-        document.getElementById('weather-note-text').textContent =
-          'Previsão ainda não disponível pra essas datas — a Open-Meteo só prevê com ~16 dias de antecedência. Volte mais perto da viagem!';
-      });
-  }
-
-  fetchWeather();
 </script>
 
 </body>
