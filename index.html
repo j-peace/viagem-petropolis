@@ -293,6 +293,43 @@
     .wedding-inner { padding: 52px 14px; }
   }
 
+  #sitio {
+    position: relative;
+    background: url('assets/img/sitio-novembro.png') center/cover no-repeat;
+  }
+  #sitio::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(15,40,25,0.68) 0%, rgba(15,40,25,0.82) 100%);
+  }
+  .sitio-inner {
+    position: relative;
+    z-index: 1;
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 116px 24px;
+    text-align: center;
+    color: #fff;
+  }
+  .sitio-eyebrow {
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #f4cd7a;
+    margin-bottom: 12px;
+  }
+  .sitio-title {
+    font-size: clamp(1.8rem, 5vw, 2.8rem);
+    font-weight: 800;
+    line-height: 1.15;
+    text-shadow: 0 4px 20px rgba(0,0,0,0.25);
+  }
+  @media (max-width: 600px) {
+    .sitio-inner { padding: 104px 14px; }
+  }
+
   .photos-caption {
     text-align: center;
     color: #777;
@@ -324,7 +361,12 @@
   .after-date {
     font-size: 1.15rem;
     font-weight: 700;
-    color: var(--green-dark);
+    color: #000;
+    margin-bottom: 6px;
+  }
+  .after-address {
+    font-size: 0.95rem;
+    color: #555;
     margin-bottom: 16px;
   }
   .after-list-title {
@@ -521,6 +563,7 @@
     <img src="assets/img/foto-divertida-32.jpeg" alt="A tropa no restaurante">
     <img src="assets/img/foto-divertida-33.jpeg" alt="Servindo a harmonização">
     <img src="assets/img/foto-divertida-34.png" alt="Vinho de R$ 5.599">
+    <img src="assets/img/foto-divertida-35.png" alt="Subia! Descia! na dança">
   </div>
 </section>
 
@@ -530,11 +573,13 @@
   <div class="after-card">
     <img class="after-photo" src="assets/img/foto-divertida-23.jpeg" alt="A tropa a caminho de Petrópolis">
     <div class="after-info">
-      <p class="after-date">📅 Dia a definir</p>
+      <p class="after-date">É hojeee - 5:34 AM</p>
+      <p class="after-address">📍 Alameda dos Rouxinóis, 965, Cabral.</p>
       <p class="after-list-title">Lista de presença</p>
       <ul class="after-list">
         <li>Todos</li>
         <li>Licor de banana</li>
+        <li>Chinelo de dedo</li>
       </ul>
     </div>
   </div>
@@ -552,6 +597,13 @@
     </div>
     <p class="wedding-sub">Subia! Descia! 🥂</p>
     <div class="countdown-done" id="countdown-done">Chegou o grande dia! 💍🎉</div>
+  </div>
+</section>
+
+<section id="sitio">
+  <div class="sitio-inner">
+    <div class="sitio-eyebrow">Data provisória · 07/11</div>
+    <h2 class="sitio-title">Sítio · Novembro</h2>
   </div>
 </section>
 
